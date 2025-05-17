@@ -1,0 +1,57 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Unity auto-generated file
+sysinfo.txt
+
+# Visual Studio / Rider / JetBrains
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Crash and debug
+*.stacktrace
+*.diff
+*.patch
+*.orig
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Exclude if using Unity Cloud Build
+# (You can include Assets/StreamingAssets if needed)
+StreamingAssets/
+
+# If using Addressables
+AddressableAssetsData/*.bin*
+AddressableAssetsData/*.json
+AddressableAssetsData/*.linker
+
+# Unity Cache and Build
+*.apk
+*.aab
+*.unitypackage
+*.log
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Exclude generated data for DOTS-based builds
+BuildSettings/
