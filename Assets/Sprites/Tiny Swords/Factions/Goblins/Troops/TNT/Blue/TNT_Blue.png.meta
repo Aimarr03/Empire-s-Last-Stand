@@ -177,8 +177,8 @@ TextureImporter:
         y: 440
         width: 88
         height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,8 +199,8 @@ TextureImporter:
         y: 440
         width: 85
         height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,8 +221,8 @@ TextureImporter:
         y: 440
         width: 85
         height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,11 +240,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 634
-        y: 440
+        y: 442
         width: 88
         height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,8 +265,8 @@ TextureImporter:
         y: 440
         width: 88
         height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,8 +287,8 @@ TextureImporter:
         y: 440
         width: 84
         height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,28 +302,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Blue_6
-      rect:
-        serializedVersion: 2
-        x: 1099
-        y: 487
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd915419709c8c8e0800000000000000
-      internalID: -1672866227228960289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: TNT_Blue_7
       rect:
         serializedVersion: 2
@@ -331,8 +309,8 @@ TextureImporter:
         y: 250
         width: 82
         height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,8 +331,8 @@ TextureImporter:
         y: 250
         width: 82
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,8 +353,8 @@ TextureImporter:
         y: 250
         width: 85
         height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -397,8 +375,8 @@ TextureImporter:
         y: 250
         width: 87
         height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -419,8 +397,8 @@ TextureImporter:
         y: 250
         width: 84
         height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -441,8 +419,8 @@ TextureImporter:
         y: 250
         width: 82
         height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -463,8 +441,8 @@ TextureImporter:
         y: 56
         width: 79
         height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -485,8 +463,8 @@ TextureImporter:
         y: 56
         width: 78
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -507,8 +485,8 @@ TextureImporter:
         y: 56
         width: 77
         height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -529,8 +507,8 @@ TextureImporter:
         y: 56
         width: 76
         height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -551,8 +529,8 @@ TextureImporter:
         y: 56
         width: 75
         height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -573,8 +551,8 @@ TextureImporter:
         y: 56
         width: 66
         height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -595,8 +573,8 @@ TextureImporter:
         y: 56
         width: 68
         height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -613,7 +591,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 02dfa1dd510dabb4b9c7e8f6cc21f9cb
     internalID: 0
     vertices: []
     indices: 
@@ -622,7 +600,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TNT_Blue_0: -4018474691228133916
+      TNT_Blue_1: -1322779965892065620
+      TNT_Blue_10: -1537509751666136771
+      TNT_Blue_11: -455381705162110367
+      TNT_Blue_12: -251161555349555468
+      TNT_Blue_13: -1931856458177630270
+      TNT_Blue_14: 6797021380799551527
+      TNT_Blue_15: -6019588919026583489
+      TNT_Blue_16: 6824378157758382570
+      TNT_Blue_17: 7550169068514017198
+      TNT_Blue_18: 4468404440877863613
+      TNT_Blue_19: -3792055948110156169
+      TNT_Blue_2: -698591530043233218
+      TNT_Blue_3: 2263616036653217452
+      TNT_Blue_4: 9217159713942085056
+      TNT_Blue_5: 4677824975902095554
+      TNT_Blue_6: -1672866227228960289
+      TNT_Blue_7: 8196633686204137313
+      TNT_Blue_8: -2983388483930243164
+      TNT_Blue_9: -4465804784606467390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
