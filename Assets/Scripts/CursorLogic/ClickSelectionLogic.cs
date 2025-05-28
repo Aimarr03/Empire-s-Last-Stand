@@ -19,23 +19,34 @@ public class ClickSelectionLogic : MonoBehaviour
             if (hit.collider != null)
             {
                 GameObject hitObject = hit.collider.gameObject;
-                if (hitObject.CompareTag("Unit"))
-                {
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        Manager_UnitSelection.Instance.ShiftSelectUnit(hitObject);
-                    }
-                    else
-                    {
-                        Manager_UnitSelection.Instance.SelectUnit(hitObject);
-                    }
-                }
-                
+                HandleTypeOfSelectableUnit(hitObject);
             }
             else
             {
                 Manager_UnitSelection.Instance.DeselectAll();
             }
+        }
+    }
+    void HandleTypeOfSelectableUnit(GameObject hitObject)
+    {
+        if (hitObject.CompareTag("Unit"))
+        {
+            HandleTroopsType(hitObject);
+        }
+        else if (hitObject.CompareTag("Building"))
+        {
+            Manager_UnitSelection.Instance.SelectBuilding(hitObject);
+        }
+    }
+    void HandleTroopsType(GameObject hitObject)
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Manager_UnitSelection.Instance.ShiftSelectUnit(hitObject);
+        }
+        else
+        {
+            Manager_UnitSelection.Instance.SelectUnit(hitObject);
         }
     }
 }

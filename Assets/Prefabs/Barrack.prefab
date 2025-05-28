@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 596481754167942952}
   - component: {fileID: 4953982470662962833}
   - component: {fileID: -1828139503963673804}
-  m_Layer: 6
+  - component: {fileID: 1785233985848333184}
+  m_Layer: 3
   m_Name: Barrack
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +162,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.28, y: 1.92}
   m_EdgeRadius: 0
+--- !u!114 &1785233985848333184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007738249619638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c9ea5a229f18949ba4a4668d89a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8831884132766330998
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 743150064151199974}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

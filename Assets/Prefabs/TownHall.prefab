@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7844150859351431498}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 4526363202211321458}
   - component: {fileID: 5001565399354544020}
   - component: {fileID: -8926424296212349887}
-  m_Layer: 6
+  - component: {fileID: 5344307251691731444}
+  m_Layer: 3
   m_Name: TownHall
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,3 +188,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.2, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &5344307251691731444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597819493189629101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c9ea5a229f18949ba4a4668d89a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
