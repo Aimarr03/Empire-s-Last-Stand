@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Bullet : EnemyDamage
+public class Bullet : ProjectileDamage
 {
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
     private float lifetime;
 
-    public void ActivateProjectile()
-    {
-        lifetime = 0;
-        gameObject.SetActive(true);
-    }
+public void ActivateProjectile()
+{
+    lifetime = 0;
+    Debug.Log("Activating projectile: " + gameObject.name);
+    gameObject.SetActive(true);
+}
+
     private void Update()
     {
         float movementSpeed = speed * Time.deltaTime;
