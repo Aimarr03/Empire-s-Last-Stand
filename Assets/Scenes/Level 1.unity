@@ -548,6 +548,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &756739708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2651804098760232164, guid: e371a45aca31723458752f20b4507c7e, type: 3}
+  m_PrefabInstance: {fileID: 3469826675311153516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &756739713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756739708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cebc672b79311e4c9468e45b38914e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  hp: 30
+  currentTarget: {fileID: 0}
+  attackCooldown: 1.5
+  damage: 5
 --- !u!1 &908274337
 GameObject:
   m_ObjectHideFlags: 0
@@ -18579,6 +18601,28 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1968894948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6473831890287617102, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
+  m_PrefabInstance: {fileID: 624982432071212158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1968894953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968894948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa9d8d4063d99f47a1e1531412d21e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  hp: 30
+  currentTarget: {fileID: 0}
+  attackCooldown: 1.5
+  damage: 5
 --- !u!1 &2089495301
 GameObject:
   m_ObjectHideFlags: 0
@@ -18676,11 +18720,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533129236881061769, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 533129236881061769, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.581
+      value: -4.54
       objectReference: {fileID: 0}
     - target: {fileID: 533129236881061769, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18721,7 +18765,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6473831890287617102, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1968894953}
   m_SourcePrefab: {fileID: 100100000, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
 --- !u!1001 &1153448562445496361
 PrefabInstance:
@@ -18734,6 +18781,10 @@ PrefabInstance:
     - target: {fileID: 6443485601106749032, guid: c17de3d56ea1168448334ad88f103622, type: 3}
       propertyPath: m_Name
       value: Enemy Bomber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443485601106749032, guid: c17de3d56ea1168448334ad88f103622, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9199171911385243449, guid: c17de3d56ea1168448334ad88f103622, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18790,11 +18841,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2507825025180300118, guid: e371a45aca31723458752f20b4507c7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 8.32
       objectReference: {fileID: 0}
     - target: {fileID: 2507825025180300118, guid: e371a45aca31723458752f20b4507c7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 2507825025180300118, guid: e371a45aca31723458752f20b4507c7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18835,7 +18886,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2651804098760232164, guid: e371a45aca31723458752f20b4507c7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756739713}
   m_SourcePrefab: {fileID: 100100000, guid: e371a45aca31723458752f20b4507c7e, type: 3}
 --- !u!1001 &4572113948012263543
 PrefabInstance:
@@ -18945,6 +18999,10 @@ PrefabInstance:
     - target: {fileID: 5360219211889947321, guid: d2f754bd087b4254994a8bec65d0f097, type: 3}
       propertyPath: m_Name
       value: Enemy Thrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360219211889947321, guid: d2f754bd087b4254994a8bec65d0f097, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
