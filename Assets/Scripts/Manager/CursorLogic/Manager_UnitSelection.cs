@@ -12,12 +12,14 @@ public class Manager_UnitSelection : MonoBehaviour
 
     public List<GameObject> AllUnits = new List<GameObject>();
     public List<GameObject> SelectedUnits = new List<GameObject>();
+    public Canvas selectedBuildingUI;
     private GameObject _selectedBuilding;
     private void Awake()
     {
         if(_instance == null)
         {
             _instance = this;
+            DeselectAll();
         }
         else
         {
@@ -36,6 +38,21 @@ public class Manager_UnitSelection : MonoBehaviour
         DeselectAll();
         _selectedBuilding = building;
         Debug.Log("Selection - Select Building " + building.name);
+        HandleUI();
+    }
+    private void HandleUI()
+    {
+        if (_selectedBuilding == null)
+        {
+            selectedBuildingUI.gameObject.SetActive(false);
+        }
+        else
+        {
+            selectedBuildingUI.gameObject.SetActive(true);
+            Vector3 buildingPos = _selectedBuilding.transform.position;
+            Vector3 offsetPos = new Vector3(4, 2, 0);
+            selectedBuildingUI.transform.position = buildingPos + offsetPos;
+        }
     }
     public void ShiftSelectUnit(GameObject unitToAdd)
     {
@@ -64,6 +81,7 @@ public class Manager_UnitSelection : MonoBehaviour
         Debug.Log("Selection - Remove All Unit ");
         _selectedBuilding = null;
         SelectedUnits.Clear();
+        HandleUI();
     }
     public void Deselect(GameObject unitToAdd)
     {

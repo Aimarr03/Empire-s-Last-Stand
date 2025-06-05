@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllUnits: []
   SelectedUnits: []
+  selectedBuildingUI: {fileID: 0}
 --- !u!114 &8655631539205415601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,11 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  uiLayer:
+    serializedVersion: 2
+    m_Bits: 32
+  raycaster: {fileID: 0}
+  eventSystem: {fileID: 0}
   cam: {fileID: 0}
 --- !u!114 &1373871965442455732
 MonoBehaviour:
