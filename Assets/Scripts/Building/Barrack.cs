@@ -9,6 +9,7 @@ namespace Game.Buildings
         public GameObject troopPrefab;  // Assign prefab unit di Inspector
         public Transform spawnPoint;    // Titik spawn troop
         public float baseSpawnInterval = 10f;
+        public Canvas _ui;
         private float currentSpawnInterval;
 
         public int baseTroopCount = 1;
@@ -73,6 +74,12 @@ namespace Game.Buildings
             // Perpendek interval spawn tapi minimal 3 detik
             currentSpawnInterval = Mathf.Max(3f, baseSpawnInterval - (upgradeLevel - 1) * 3f);
             Debug.Log($"{gameObject.name} spawn interval now {currentSpawnInterval} seconds.");
+        }
+
+        public override void FinishConstruction()
+        {
+            base.FinishConstruction();
+            _ui.gameObject.SetActive(true);
         }
     }
 }

@@ -304,15 +304,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Archer_Blue_0
+      name: ArcherFull_Blue_Idle_0
       rect:
         serializedVersion: 2
         x: 67
         y: 1209
         width: 64
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,15 +326,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_1
+      name: ArcherFull_Blue_Idle_1
       rect:
         serializedVersion: 2
         x: 259
         y: 1209
         width: 65
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -348,15 +348,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_2
+      name: ArcherFull_Blue_Idle_2
       rect:
         serializedVersion: 2
         x: 451
         y: 1209
         width: 65
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -370,15 +370,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_3
+      name: ArcherFull_Blue_Idle_3
       rect:
         serializedVersion: 2
         x: 641
         y: 1209
         width: 69
         height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -392,15 +392,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_4
+      name: ArcherFull_Blue_Idle_4
       rect:
         serializedVersion: 2
         x: 833
         y: 1209
         width: 67
         height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -414,15 +414,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_5
+      name: ArcherFull_Blue_Idle_5
       rect:
         serializedVersion: 2
         x: 1026
         y: 1209
         width: 64
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -436,15 +436,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_6
+      name: ArcherFull_Blue_Run_0
       rect:
         serializedVersion: 2
         x: 65
         y: 1017
         width: 69
         height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -458,15 +458,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_7
+      name: ArcherFull_Blue_Run_1
       rect:
         serializedVersion: 2
         x: 258
         y: 1017
         width: 67
         height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -480,15 +480,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_8
+      name: ArcherFull_Blue_Run_2
       rect:
         serializedVersion: 2
         x: 451
         y: 1017
         width: 64
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -502,37 +502,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_9
+      name: ArcherFull_Blue_Run_3
       rect:
         serializedVersion: 2
-        x: 636
-        y: 1035
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca48f94a7b7cc1d80800000000000000
-      internalID: -8278522423458954068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Blue_10
-      rect:
-        serializedVersion: 2
-        x: 641
+        x: 637
         y: 1017
-        width: 69
+        width: 73
         height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -546,37 +524,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_11
+      name: ArcherFull_Blue_Run_4
       rect:
         serializedVersion: 2
-        x: 830
-        y: 1030
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 575f85dcdb4da5ad0800000000000000
-      internalID: -2712621913878235787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Blue_12
-      rect:
-        serializedVersion: 2
-        x: 834
+        x: 831
         y: 1017
-        width: 67
+        width: 70
         height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -590,15 +546,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_13
+      name: ArcherFull_Blue_Run_5
       rect:
         serializedVersion: 2
         x: 1027
         y: 1017
         width: 64
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -620,7 +576,7 @@ TextureImporter:
         width: 67
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -642,7 +598,7 @@ TextureImporter:
         width: 77
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -664,7 +620,7 @@ TextureImporter:
         width: 64
         height: 116
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -686,7 +642,7 @@ TextureImporter:
         width: 68
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -708,7 +664,7 @@ TextureImporter:
         width: 68
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -730,7 +686,7 @@ TextureImporter:
         width: 68
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -752,7 +708,7 @@ TextureImporter:
         width: 62
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -774,7 +730,7 @@ TextureImporter:
         width: 43
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -796,7 +752,7 @@ TextureImporter:
         width: 57
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -818,7 +774,7 @@ TextureImporter:
         width: 35
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -840,7 +796,7 @@ TextureImporter:
         width: 66
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -862,7 +818,7 @@ TextureImporter:
         width: 57
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -884,7 +840,7 @@ TextureImporter:
         width: 94
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -906,7 +862,7 @@ TextureImporter:
         width: 74
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -928,7 +884,7 @@ TextureImporter:
         width: 76
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -950,7 +906,7 @@ TextureImporter:
         width: 76
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -972,7 +928,7 @@ TextureImporter:
         width: 80
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -994,7 +950,7 @@ TextureImporter:
         width: 68
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1008,15 +964,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_32
+      name: ArcherFull_Blue_Attack_0
       rect:
         serializedVersion: 2
         x: 55
         y: 441
         width: 66
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1030,15 +986,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_33
+      name: ArcherFull_Blue_Attack_1
       rect:
         serializedVersion: 2
         x: 256
         y: 441
         width: 57
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1052,15 +1008,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_34
+      name: ArcherFull_Blue_Attack_2
       rect:
         serializedVersion: 2
         x: 448
         y: 441
         width: 94
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1074,15 +1030,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_35
+      name: ArcherFull_Blue_Attack_3
       rect:
         serializedVersion: 2
         x: 634
         y: 441
         width: 81
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1096,15 +1052,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_36
+      name: ArcherFull_Blue_Attack_4
       rect:
         serializedVersion: 2
         x: 826
         y: 441
         width: 75
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1118,15 +1074,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_37
+      name: ArcherFull_Blue_Attack_5
       rect:
         serializedVersion: 2
         x: 1018
         y: 441
         width: 75
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1140,15 +1096,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_38
+      name: ArcherFull_Blue_Attack_6
       rect:
         serializedVersion: 2
         x: 1202
         y: 441
         width: 82
         height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1162,15 +1118,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Blue_39
+      name: ArcherFull_Blue_Attack_7
       rect:
         serializedVersion: 2
         x: 1408
         y: 441
         width: 65
         height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1192,7 +1148,7 @@ TextureImporter:
         width: 66
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1214,7 +1170,7 @@ TextureImporter:
         width: 57
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1236,7 +1192,7 @@ TextureImporter:
         width: 94
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1258,7 +1214,7 @@ TextureImporter:
         width: 63
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1280,7 +1236,7 @@ TextureImporter:
         width: 69
         height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1302,7 +1258,7 @@ TextureImporter:
         width: 69
         height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1324,7 +1280,7 @@ TextureImporter:
         width: 76
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1346,7 +1302,7 @@ TextureImporter:
         width: 71
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1368,7 +1324,7 @@ TextureImporter:
         width: 66
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1390,7 +1346,7 @@ TextureImporter:
         width: 57
         height: 77
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1412,7 +1368,7 @@ TextureImporter:
         width: 86
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1434,7 +1390,7 @@ TextureImporter:
         width: 57
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1456,7 +1412,7 @@ TextureImporter:
         width: 57
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1478,7 +1434,7 @@ TextureImporter:
         width: 57
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1500,7 +1456,7 @@ TextureImporter:
         width: 61
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1522,7 +1478,7 @@ TextureImporter:
         width: 71
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1539,7 +1495,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e4abf66e1de2cd4a8049c061845d54f
     internalID: 0
     vertices: []
     indices: 
@@ -1549,19 +1505,33 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Archer_Blue_0: -7033695032449837365
-      Archer_Blue_1: 6114246488613233537
-      Archer_Blue_10: -6069542870818123003
+      ArcherFull_Blue_Attack_0: -7274046902297519927
+      ArcherFull_Blue_Attack_1: 8560472985470075578
+      ArcherFull_Blue_Attack_2: -5122523609243933794
+      ArcherFull_Blue_Attack_3: 2797235972633672342
+      ArcherFull_Blue_Attack_4: -3126045974256145544
+      ArcherFull_Blue_Attack_5: -1881630756298349670
+      ArcherFull_Blue_Attack_6: -1833571180098712622
+      ArcherFull_Blue_Attack_7: 167391717528496023
+      ArcherFull_Blue_Idle_0: -7033695032449837365
+      ArcherFull_Blue_Idle_1: 6114246488613233537
+      ArcherFull_Blue_Idle_2: -5010010259858565645
+      ArcherFull_Blue_Idle_3: 8006088990915778119
+      ArcherFull_Blue_Idle_4: -795545583119653244
+      ArcherFull_Blue_Idle_5: 7478542217812414065
+      ArcherFull_Blue_Run_0: -3216901329665983845
+      ArcherFull_Blue_Run_1: -5029872168309620029
+      ArcherFull_Blue_Run_2: -9064025154593754007
+      ArcherFull_Blue_Run_3: -6069542870818123003
+      ArcherFull_Blue_Run_4: 5940929062476048998
+      ArcherFull_Blue_Run_5: 2957541457843667387
       Archer_Blue_11: -2712621913878235787
-      Archer_Blue_12: 5940929062476048998
-      Archer_Blue_13: 2957541457843667387
       Archer_Blue_14: 8559424275854079522
       Archer_Blue_15: -1830901047940275935
       Archer_Blue_16: -4227779676925609068
       Archer_Blue_17: 1126587424600933757
       Archer_Blue_18: -3992046011941290770
       Archer_Blue_19: -4524189058815036579
-      Archer_Blue_2: -5010010259858565645
       Archer_Blue_20: -3130385886679002657
       Archer_Blue_21: -948891528349140180
       Archer_Blue_22: -3321098064577581836
@@ -1572,18 +1542,8 @@ TextureImporter:
       Archer_Blue_27: 7959813195889624457
       Archer_Blue_28: -3093811841882010217
       Archer_Blue_29: 6824409124470345055
-      Archer_Blue_3: 8006088990915778119
       Archer_Blue_30: -7866555688576549673
       Archer_Blue_31: 3629576908501536167
-      Archer_Blue_32: -7274046902297519927
-      Archer_Blue_33: 8560472985470075578
-      Archer_Blue_34: -5122523609243933794
-      Archer_Blue_35: 2797235972633672342
-      Archer_Blue_36: -3126045974256145544
-      Archer_Blue_37: -1881630756298349670
-      Archer_Blue_38: -1833571180098712622
-      Archer_Blue_39: 167391717528496023
-      Archer_Blue_4: -795545583119653244
       Archer_Blue_40: -7388167028423196361
       Archer_Blue_41: 8198042478603660113
       Archer_Blue_42: 1511012060357282073
@@ -1594,16 +1554,12 @@ TextureImporter:
       Archer_Blue_47: -4959512633333549721
       Archer_Blue_48: 5009402246161469269
       Archer_Blue_49: 1253072248284259174
-      Archer_Blue_5: 7478542217812414065
       Archer_Blue_50: -106705275555082950
       Archer_Blue_51: 1229654063248624451
       Archer_Blue_52: -1027743654290022984
       Archer_Blue_53: 4118516568766301594
       Archer_Blue_54: -1557887090808726545
       Archer_Blue_55: -206179087595372860
-      Archer_Blue_6: -3216901329665983845
-      Archer_Blue_7: -5029872168309620029
-      Archer_Blue_8: -9064025154593754007
       Archer_Blue_9: -8278522423458954068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

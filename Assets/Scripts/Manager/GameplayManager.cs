@@ -61,6 +61,7 @@ public class GameplayManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(cameraMovement.action.ReadValue<Vector2>());
+        if (pause) return;
         if (EventSystem.current.IsPointerOverGameObject()) return;
         HandleCameraMovement();
     }

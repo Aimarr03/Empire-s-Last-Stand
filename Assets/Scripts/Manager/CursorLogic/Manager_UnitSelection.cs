@@ -50,7 +50,14 @@ public class Manager_UnitSelection : MonoBehaviour
         {
             selectedBuildingUI.gameObject.SetActive(true);
             Vector3 buildingPos = _selectedBuilding.transform.position;
+
+            Vector3 ScreenBuildingPos = Camera.main.WorldToScreenPoint(buildingPos);
+            float halfWidth = Screen.width / 2;
+            float halfHeight = Screen.height / 2;
+
             Vector3 offsetPos = new Vector3(4, 2, 0);
+            offsetPos.x = ScreenBuildingPos.x > halfWidth ? -4 : 4;
+            offsetPos.y = ScreenBuildingPos.y > halfHeight? -2 : 2;
             selectedBuildingUI.transform.position = buildingPos + offsetPos;
         }
     }

@@ -51,7 +51,7 @@ MonoBehaviour:
   objectToFollow: {fileID: 0}
   boundaryCamera: {fileID: 0}
   cameraMovSpeed: 6
-  edgeLimit: 15
+  edgeLimit: 3
 --- !u!114 &4528474670429443237
 MonoBehaviour:
   m_ObjectHideFlags: 0
