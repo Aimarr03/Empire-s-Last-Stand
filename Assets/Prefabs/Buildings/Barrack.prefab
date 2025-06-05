@@ -780,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2774d8feb0931f04ebfec705225e49ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingName: barracks
   maxHP: 100
   currentHP: 0
   cost: 3
@@ -788,6 +789,7 @@ MonoBehaviour:
   spriteConstruction: {fileID: 21300000, guid: 04c154a58dfedb54c955fd3d40a43c4b, type: 3}
   spriteReady: {fileID: 21300000, guid: 3d22a63ec1662d248954bba815816dd8, type: 3}
   spriteDestroyed: {fileID: 21300000, guid: e915422d270c0eb4ab8f57130fd157aa, type: 3}
+  troopType: Knight
   troopPrefab: {fileID: 1845233471095826112, guid: 395c5711ff1b4704f914c85cd73489db, type: 3}
   spawnPoint: {fileID: 743150064151199974}
   baseSpawnInterval: 10

@@ -1,3 +1,4 @@
+using Game.Buildings;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Manager_UnitSelection : MonoBehaviour
 
     public List<GameObject> AllUnits = new List<GameObject>();
     public List<GameObject> SelectedUnits = new List<GameObject>();
+    public UI_Building ui_building;
     public Canvas selectedBuildingUI;
     private GameObject _selectedBuilding;
     private void Awake()
@@ -36,6 +38,10 @@ public class Manager_UnitSelection : MonoBehaviour
     public void SelectBuilding(GameObject building)
     {
         DeselectAll();
+        if(GameplayManager.instance.gameState != GameState.Morning)
+        {
+            return;
+        }
         _selectedBuilding = building;
         Debug.Log("Selection - Select Building " + building.name);
         HandleUI();
@@ -59,6 +65,8 @@ public class Manager_UnitSelection : MonoBehaviour
             offsetPos.x = ScreenBuildingPos.x > halfWidth ? -4 : 4;
             offsetPos.y = ScreenBuildingPos.y > halfHeight? -2 : 2;
             selectedBuildingUI.transform.position = buildingPos + offsetPos;
+            Building building = _selectedBuilding.GetComponent<Building>();
+            ui_building.SetupBuilding(building);
         }
     }
     public void ShiftSelectUnit(GameObject unitToAdd)

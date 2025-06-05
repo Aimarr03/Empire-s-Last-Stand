@@ -6,6 +6,7 @@ namespace Game.Buildings
 {
     public class Building : MonoBehaviour
     {
+        public string buildingName;
         public int maxHP = 100;
         public int currentHP;
 

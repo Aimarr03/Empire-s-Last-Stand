@@ -142,13 +142,13 @@ TextureImporter:
       name: Ribbon_Yellow_Connection_Left_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 13
-        width: 61
-        height: 50
+        x: 4
+        y: 14
+        width: 59
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 6, z: 15, w: 3}
       customData: 
       outline: []
       physicsShape: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e3ed8a93ee4d7ce4c914185accf5d32c
     internalID: 0
     vertices: []
     indices: 

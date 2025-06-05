@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager instance;
+    [SerializeField] private UI_Gameplay ui_gameplay;
+    [SerializeField] private VisualManager visualManager;
 
     public InputActionReference actionCommand;
     public InputActionReference pauseAction;
@@ -34,6 +36,7 @@ public class GameplayManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            GainMoney(10);
         }
         else
         {
@@ -104,6 +107,7 @@ public class GameplayManager : MonoBehaviour
         }
         Debug.Log("Action - Enemy Incoming - Wave: " + currentNight);
         gameState = GameState.Night;
+        visualManager.ChangeToNight();
     }
 
     public bool CheckMoney(int cost) => currentMoney >= cost;
@@ -113,6 +117,7 @@ public class GameplayManager : MonoBehaviour
         if (CheckMoney(cost))
         {
             currentMoney -= cost;
+            ui_gameplay.UpdateGoldText(currentMoney);
             Debug.Log($"Economy - Money Spent: {cost} - Remaining: {currentMoney}");
         }
         else
@@ -124,6 +129,7 @@ public class GameplayManager : MonoBehaviour
     {
         currentMoney += reward;
         Debug.Log($"Economy - Money Gain: {reward} - Total Current Money: {currentMoney}");
+        ui_gameplay.UpdateGoldText(currentMoney);
     }
 }
 public enum GameState

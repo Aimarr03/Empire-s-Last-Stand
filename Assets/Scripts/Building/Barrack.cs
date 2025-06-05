@@ -6,6 +6,7 @@ namespace Game.Buildings
 {
     public class Barrack : Building
     {
+        public string troopType;
         public GameObject troopPrefab;  // Assign prefab unit di Inspector
         public Transform spawnPoint;    // Titik spawn troop
         public float baseSpawnInterval = 10f;
