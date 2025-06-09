@@ -23,12 +23,7 @@ sysinfo.txt
 *.pidb
 *.booproj
 *.svd
-# Visual Studio
-.vs/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+
 # Crash and debug
 *.stacktrace
 *.diff

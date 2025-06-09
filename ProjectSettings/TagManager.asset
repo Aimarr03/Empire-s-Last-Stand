@@ -13,10 +13,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Clickable
+  - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
@@ -48,9 +48,6 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 4095931357
-    locked: 0
-  - name: UI
-    uniqueID: 3572617313
     locked: 0
   m_RenderingLayers:
   - Default
