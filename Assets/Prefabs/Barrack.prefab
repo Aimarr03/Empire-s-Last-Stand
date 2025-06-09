@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6007738249619638097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.42, y: 1.2, z: -9.940151}
+  m_LocalPosition: {x: 12.42, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 04c154a58dfedb54c955fd3d40a43c4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,16 +105,22 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 0
   cost: 100
-  upgradeLevel: 1
+  upgradeLevel: 0
   maxUpgradeLevel: 2
   spriteConstruction: {fileID: 21300000, guid: 04c154a58dfedb54c955fd3d40a43c4b, type: 3}
   spriteReady: {fileID: 21300000, guid: 3d22a63ec1662d248954bba815816dd8, type: 3}
   spriteDestroyed: {fileID: 21300000, guid: e915422d270c0eb4ab8f57130fd157aa, type: 3}
   troopPrefab: {fileID: 1845233471095826112, guid: 395c5711ff1b4704f914c85cd73489db, type: 3}
   spawnPoint: {fileID: 743150064151199974}
-  baseSpawnInterval: 10
-  baseTroopCount: 1
-  spawnSpreadRadius: 1.5
+  levelStats:
+  - hp: 40
+    costToBuild: 4
+    maxUnits: 4
+    spawnInterval: 1.5
+  - hp: 65
+    costToBuild: 7
+    maxUnits: 8
+    spawnInterval: 1
 --- !u!61 &-1828139503963673804
 BoxCollider2D:
   m_ObjectHideFlags: 0

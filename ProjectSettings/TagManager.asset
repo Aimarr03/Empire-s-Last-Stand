@@ -16,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Building
+  - Troop
   - 
   - 
   - 
@@ -48,6 +48,12 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 4095931357
+    locked: 0
+  - name: Troop
+    uniqueID: 147153155
+    locked: 0
+  - name: Building
+    uniqueID: 654785501
     locked: 0
   m_RenderingLayers:
   - Default
