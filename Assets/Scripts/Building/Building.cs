@@ -8,12 +8,12 @@ namespace Game.Buildings
     public class Building : MonoBehaviour
     {
         [Header("Building Stats")]
-        public int maxHP = 100;
-        public int currentHP;
+        public float maxHP = 100f; // Menggunakan float sesuai rubrik
+        public float currentHP;    // Menggunakan float
 
-        public int cost = 100;
+        public int cost = 100; // Cost To Build
         public int upgradeLevel = 1;
-        public int maxUpgradeLevel = 2;
+        public int maxUpgradeLevel = 2; // Default, bisa di-override di subclass jika ada lebih dari 2 level
 
         [Header("Visual Sprites (Base Class)")]
         public Sprite spriteReady;     // Sprite default ketika bangunan siap
@@ -37,34 +37,24 @@ namespace Game.Buildings
 
         protected virtual void Start()
         {
-            currentHP = maxHP;
+            currentHP = maxHP; // Inisialisasi HP saat Start
             
-            // Panggil metode untuk memulai visual konstruksi (akan di-override di subclass)
             StartConstructionVisual(); 
 
-            // Panggil FinishConstruction setelah constructionTime detik
             Invoke("FinishConstruction", constructionTime); 
         }
 
         // --- Metode Visual ---
 
-        // Metode ini akan dipanggil di Start(), dan di-override di subclass
-        // untuk menampilkan animasi konstruksi spesifik.
         protected virtual void StartConstructionVisual()
         {
             currentVisualState = BuildingVisualState.Constructing;
-            // Di sini, di base class, kita mungkin tidak punya sprite konstruksi default.
-            // Biarkan subclass yang menampilkannya. Jika Anda ingin sprite placeholder,
-            // tambahkan public Sprite defaultConstructionSprite; dan set di sini.
             Debug.Log($"{gameObject.name} memulai visual konstruksi.");
         }
 
-        // Metode untuk mengatur state visual bangunan secara umum
         public virtual void SetBuildingVisualState(BuildingVisualState newState)
         {
-            // Jangan ubah currentVisualState di sini, karena StartConstructionVisual
-            // dan metode turunan lain mungkin sudah mengaturnya.
-            // Cukup handle perubahan sprite/coroutine.
+            if (currentVisualState == newState && newState != BuildingVisualState.Constructing) return; // Perbaikan: hindari ganti state yang sama kecuali constructing
 
             // Hentikan coroutine animasi sebelumnya jika ada
             if (currentVisualCoroutine != null)
@@ -76,8 +66,7 @@ namespace Game.Buildings
             switch (newState)
             {
                 case BuildingVisualState.Constructing:
-                    // Logika visual konstruksi sekarang ditangani sepenuhnya oleh StartConstructionVisual()
-                    // atau override-nya di subclass.
+                    // Logika visual konstruksi ditangani oleh StartConstructionVisual() di subclass
                     break;
 
                 case BuildingVisualState.Ready:
@@ -90,7 +79,6 @@ namespace Game.Buildings
                         Debug.LogWarning($"Ready sprite not assigned for {gameObject.name} or SpriteRenderer missing!");
                     }
                     Debug.Log($"{gameObject.name} visual state: Ready.");
-                    currentVisualState = BuildingVisualState.Ready; // Update state di akhir
                     break;
 
                 case BuildingVisualState.Destroyed:
@@ -103,21 +91,18 @@ namespace Game.Buildings
                         Debug.LogWarning($"Destroyed sprite not assigned for {gameObject.name} or SpriteRenderer missing!");
                     }
                     Debug.Log($"{gameObject.name} visual state: Destroyed.");
-                    currentVisualState = BuildingVisualState.Destroyed; // Update state di akhir
                     break;
             }
+            currentVisualState = newState; // Pindahkan update state ke sini setelah semua logika visual
         }
 
-        // Metode FinishConstruction dipanggil setelah waktu konstruksi
         public virtual void FinishConstruction()
         {
-            SetBuildingVisualState(BuildingVisualState.Ready); // Mengatur visual ke Ready
+            SetBuildingVisualState(BuildingVisualState.Ready); 
             Debug.Log($"{gameObject.name} construction finished.");
         }
 
-
-        // Metode TakeDamage() sekarang memanggil Destroyed() saat HP <= 0
-        public virtual void TakeDamage(int damage)
+        public virtual void TakeDamage(float damage) // Ubah parameter damage menjadi float
         {
             currentHP -= damage;
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP}");
@@ -130,10 +115,10 @@ namespace Game.Buildings
 
         protected virtual void Destroyed()
         {
-            SetBuildingVisualState(BuildingVisualState.Destroyed); // Mengatur visual ke Destroyed
+            SetBuildingVisualState(BuildingVisualState.Destroyed); 
             Debug.Log($"{gameObject.name} destroyed.");
             OnDestroyed?.Invoke(this);
-            // Optional: Destroy(gameObject, 2f); // Hancurkan objek setelah 2 detik animasi destroy selesai
+            // Optional: Destroy(gameObject, 2f); 
         }
 
         public virtual void Upgrade()
@@ -142,8 +127,6 @@ namespace Game.Buildings
             {
                 upgradeLevel++;
                 Debug.Log($"{gameObject.name} upgraded to level {upgradeLevel}");
-                // Jika Anda ingin sprite khusus untuk upgrade, panggil di sini
-                // SetUpgradedSprite(); atau set visual state lain
             }
             else
             {
@@ -156,9 +139,6 @@ namespace Game.Buildings
             Debug.Log($"{gameObject.name} NextRound called.");
         }
 
-
-        // Ini adalah metode generik untuk animasi frame-by-frame.
-        // Dapat digunakan oleh subclass.
         protected IEnumerator AnimateSpriteFrames(Sprite[] frames, float frameRate, bool loop)
         {
             if (frames == null || frames.Length == 0 || spriteRenderer == null) yield break;
@@ -174,11 +154,11 @@ namespace Game.Buildings
                 {
                     if (loop)
                     {
-                        currentFrameIndex = 0; // Ulangi dari awal
+                        currentFrameIndex = 0; 
                     }
                     else
                     {
-                        yield break; // Selesai
+                        yield break; 
                     }
                 }
             }

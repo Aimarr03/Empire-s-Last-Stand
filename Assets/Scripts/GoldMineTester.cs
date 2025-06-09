@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoldMineTester : MonoBehaviour // <--- Pastikan ada ": MonoBehaviour" di sini!
+public class GoldMineTester : MonoBehaviour // Pastikan ini ada ": MonoBehaviour"
 {
     [Header("Referensi Bangunan")]
     public BuildingGoldMine targetGoldMine;
@@ -9,7 +9,7 @@ public class GoldMineTester : MonoBehaviour // <--- Pastikan ada ": MonoBehaviou
     public KeyCode nextRoundKey = KeyCode.N;
     public KeyCode upgradeKey = KeyCode.U;
     public KeyCode damageKey = KeyCode.D;
-    public int testDamage = 20;
+    public float testDamage = 20f; // Ubah ke float untuk konsistensi dengan Building.TakeDamage
 
     void Update()
     {
@@ -34,7 +34,7 @@ public class GoldMineTester : MonoBehaviour // <--- Pastikan ada ": MonoBehaviou
         if (Input.GetKeyDown(damageKey))
         {
             Debug.Log($"--- Memicu TakeDamage ({testDamage}) ---");
-            targetGoldMine.TakeDamage(testDamage);
+            targetGoldMine.TakeDamage(testDamage); // Sekarang ini memanggil TakeDamage(float)
         }
     }
 }

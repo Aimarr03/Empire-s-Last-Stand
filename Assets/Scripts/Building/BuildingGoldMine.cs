@@ -1,10 +1,12 @@
 using UnityEngine;
 using Game.Buildings;
-using System.Collections; // Diperlukan untuk Coroutine
+using System.Collections;
 
 public class BuildingGoldMine : Building // Mewarisi dari Building
 {
-    public int goldPerRound = 50;
+    // Properti Gold Mine dari Rubrik
+    // HP sudah ada di base class (Building.maxHP)
+    public float goldPerRound = 2f; // Diambil dari rubrik: Gold Per Round (float) = 2
 
     [Header("Gold Mine Specific Sprites")]
     public Sprite[] constructionFrames; 
@@ -26,29 +28,31 @@ public class BuildingGoldMine : Building // Mewarisi dari Building
         }
     }
 
-    // Override metode ini untuk menampilkan visual konstruksi Gold Mine
+    protected override void Start()
+    {
+        base.Start(); // Panggil Start dari base class untuk inisialisasi HP, memulai visual konstruksi, dan Invoke FinishConstruction
+        maxHP = 45f; // Diambil dari rubrik: HP (float) = 45
+        currentHP = maxHP; // Pastikan HP diatur sesuai maxHP yang baru
+        cost = 3; // Diambil dari rubrik: Cost To Build (int) = 3
+    }
+
     protected override void StartConstructionVisual()
     {
-        base.StartConstructionVisual(); // Panggil base method untuk set currentVisualState
+        base.StartConstructionVisual(); 
         
         if (constructionFrames != null && constructionFrames.Length > 0)
         {
-            // Mulai animasi frame-by-frame untuk konstruksi Gold Mine
-            currentVisualCoroutine = StartCoroutine(AnimateSpriteFrames(constructionFrames, constructionFrameRate, false)); // Non-looping
+            currentVisualCoroutine = StartCoroutine(AnimateSpriteFrames(constructionFrames, constructionFrameRate, false)); 
         }
         else
         {
             Debug.LogWarning("No construction frames provided for GoldMine. Defaulting to ready sprite after delay.");
-            // Fallback: Jika tidak ada frame konstruksi, set sprite default (misal, ready) tapi setelah delay.
-            // Namun, ini hanya akan terlihat setelah constructionTime selesai jika sprite ready di-set.
-            // Untuk memastikan ada visual selama konstruksi, Anda mungkin ingin sprite placeholder.
-            // Misalnya: spriteRenderer.sprite = somePlaceholderSprite;
         }
     }
 
     public override void NextRound()
     {
-        base.NextRound(); // Panggil NextRound dari Building base class
+        base.NextRound(); 
 
         if (currentHP > 0)
         {
@@ -84,10 +88,24 @@ public class BuildingGoldMine : Building // Mewarisi dari Building
 
     public override void Upgrade()
     {
-        base.Upgrade(); 
-        goldPerRound += 30;
-        maxHP += 50;
-        currentHP = maxHP; 
-        Debug.Log($"{gameObject.name} di-upgrade ke level {upgradeLevel}. Produksi: {goldPerRound} emas/ronde, Max HP: {maxHP}, Current HP: {currentHP}.");
+        // Gold Mine tidak memiliki level upgrade di rubrik Anda, jadi kita bisa menjaga agar tidak bisa di-upgrade
+        // atau menambahkan logika upgrade jika Anda berencana menambahkannya nanti.
+        // Untuk saat ini, kita bisa membiarkan base.Upgrade() terpanggil, tapi tidak ada perubahan stat.
+        // Jika Anda ingin Gold Mine TIDAK BISA di-upgrade sama sekali, Anda bisa menghapus base.Upgrade()
+        // dan hanya menampilkan pesan "sudah level maksimal" atau sejenisnya.
+
+        // Jika Anda mengaktifkan upgrade level 2 di rubrik (di masa depan), bisa seperti ini:
+        if (upgradeLevel < maxUpgradeLevel)
+        {
+            base.Upgrade();
+            goldPerRound += 1f; // Contoh peningkatan kecil jika upgrade
+            maxHP += 10f; // Contoh peningkatan HP
+            currentHP = maxHP; // Reset HP setelah upgrade
+            Debug.Log($"{gameObject.name} di-upgrade ke level {upgradeLevel}. Produksi: {goldPerRound} emas/ronde, Max HP: {maxHP}, Current HP: {currentHP}.");
+        }
+        else
+        {
+            Debug.Log($"{gameObject.name} sudah level maksimal.");
+        }
     }
 }

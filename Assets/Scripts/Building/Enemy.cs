@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 100;
+    public float health = 100f; // Ubah ke float
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(float dmg) // Ubah parameter ke float
     {
         health -= dmg;
         Debug.Log($"{gameObject.name} took {dmg} damage. Remaining health: {health}");
