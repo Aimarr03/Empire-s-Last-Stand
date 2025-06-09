@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 2f;
     public float hp = 30f;
     public Transform currentTarget;
-    private Animator animator;
+    protected Animator animator;
     private float attackRange = 0.5f;
     float lastAttackTime = 0f;
     public float attackCooldown = 1.5f;
@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
         }
     }
     
-    void AttackTarget()
+    public virtual void AttackTarget()
     {
         if (Time.time - lastAttackTime >= attackCooldown)
         {
@@ -59,30 +59,30 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // private void OnTriggerStay2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Unit"))
-    //     {
-    //         currentTarget = other.transform;
-    //     }
-    // }
-    //
-    // void OnTriggerExit2D(Collider2D other) {
-    //     if (other.CompareTag("Unit") && currentTarget == other.transform) {
-    //         currentTarget = null;
-    //     }
-    // }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Unit"))
+        {
+            currentTarget = other.transform;
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("Unit") && currentTarget == other.transform) {
+            currentTarget = null;
+        }
+    }
 
     public void TakeDamage(float amount)
     {
         hp -= amount;
         if (hp <= 0)
         {
-            Die();
+            animator.SetTrigger("Attacking");
         }
     }
 
-    void Die()
+    protected void Die()
     {
         Destroy(gameObject);
     }
