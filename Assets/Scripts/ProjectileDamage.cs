@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class ProjectileDamage : MonoBehaviour
 {
-    [SerializeField] protected float damage;
+    [SerializeField] protected int damage;
     [SerializeField] private string targetTag; // <-- Tambah target tag
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
+            if (!collision.CompareTag(targetTag)) return;
         if (collision.CompareTag(targetTag))
         {
             Health targetHealth = collision.GetComponent<Health>();
