@@ -10,18 +10,15 @@ public class ArcherController : MonoBehaviour
     float lastAttackTime = 0f;
     public float attackCooldown = 1.5f;
     public float damage = 5f;
+    private int facingDirection = 1;
 
 
-    void AttackTarget()
+
+
+    void Start()
     {
-        if (Time.time - lastAttackTime >= attackCooldown)
-        {
-
-            Debug.Log("Enemy menyerang target!");
-            lastAttackTime = Time.time;
-
-            animator.SetTrigger("Attack");
-        }
+        animator = GetComponent<Animator>();
+        currentTarget = FindNearestEnemy();
     }
 
     void Update()
@@ -39,6 +36,11 @@ public class ArcherController : MonoBehaviour
             if (distance > attackRange)
             {
                 animator.SetBool("Moving", true);
+                if ((currentTarget.position.x > transform.position.x && facingDirection == -1) ||
+                    (currentTarget.position.x < transform.position.x && facingDirection == 1))
+                {
+                    Flip();
+                }
                 transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
             }
             else
@@ -47,6 +49,19 @@ public class ArcherController : MonoBehaviour
                 AttackTarget();
             }
 
+        }
+
+    }
+
+    void AttackTarget()
+    {
+        if (Time.time - lastAttackTime >= attackCooldown)
+        {
+
+            Debug.Log("Enemy menyerang target!");
+            lastAttackTime = Time.time;
+
+            animator.SetTrigger("Attack");
         }
     }
 
@@ -61,15 +76,31 @@ public class ArcherController : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        currentTarget = FindNearestEnemy();
-    }
-
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            currentTarget = other.transform;
+        }
+    }
+
+    void Flip()
+    {
+        facingDirection *= -1;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy") && currentTarget == other.transform)
+        {
+            currentTarget = null;
+        }
     }
 
     Transform FindNearestEnemy()
