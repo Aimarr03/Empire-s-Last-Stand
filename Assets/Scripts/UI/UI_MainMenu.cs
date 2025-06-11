@@ -10,11 +10,12 @@ public class UI_MainMenu : MonoBehaviour
     [SerializeField] private RectTransform credits;
     private void Awake()
     {
-        music_volume.text = ((int)(AudioManager.instance.musicVolume * 100)).ToString();
-        sfx_volume.text = ((int)(AudioManager.instance.sfxVolume * 100)).ToString();
+        
     }
     void Start()
     {
+        music_volume.text = ((int)(AudioManager.instance.musicVolume * 100)).ToString();
+        sfx_volume.text = ((int)(AudioManager.instance.sfxVolume * 100)).ToString();
         AudioManager.instance.PlayMusic("menu");
     }
     public void PlayGame()
