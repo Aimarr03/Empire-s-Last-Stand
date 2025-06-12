@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2507825025180300118}
   - component: {fileID: 359101213113406641}
-  - component: {fileID: 6351802703062455542}
-  - component: {fileID: 935889352738247221}
   - component: {fileID: 2756924465931713408}
   - component: {fileID: 1726079227015307791}
+  - component: {fileID: 935889352738247221}
+  - component: {fileID: 6351802703062455542}
   - component: {fileID: 6817452214749145475}
   m_Layer: 3
   m_Name: Unit Knight
@@ -54,7 +54,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -68,7 +68,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -84,40 +84,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.927763, y: 0.96059847}
   m_EdgeRadius: 0
---- !u!114 &6351802703062455542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2651804098760232164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c9ea5a229f18949ba4a4668d89a512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &935889352738247221
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2651804098760232164}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7ab8e66e09009844d9c0803ee97dbca4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &2756924465931713408
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,7 +128,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2651804098760232164}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -181,6 +147,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &935889352738247221
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651804098760232164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ab8e66e09009844d9c0803ee97dbca4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6351802703062455542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651804098760232164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c9ea5a229f18949ba4a4668d89a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6817452214749145475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   attackRange: 0.5
   damage: 5
   attackCooldown: 1.5
+  level: 1
 --- !u!1 &7891155663025564057
 GameObject:
   m_ObjectHideFlags: 0

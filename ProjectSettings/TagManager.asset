@@ -9,6 +9,7 @@ TagManager:
   - Unit Bullet
   - Enemy
   - Enemy Bullet
+  - Agro Area
   layers:
   - Default
   - TransparentFX

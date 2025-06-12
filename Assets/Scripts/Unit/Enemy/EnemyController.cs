@@ -7,10 +7,11 @@ public class EnemyController : MonoBehaviour
     public float hp = 30f;
     public Transform currentTarget;
     protected Animator animator;
-    private float attackRange = 0.5f;
+    [SerializeField] protected float attackRange = 0.5f;
     float lastAttackTime = 0f;
     public float attackCooldown = 1.5f;
     public float damage = 5f;
+    public bool dead = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +19,12 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         currentTarget = FindNearestBuilding();
     }
+    
 
     // Update is called once per frame
     void Update()
     {
+        if (dead) return;
         if (currentTarget == null || !currentTarget.gameObject.activeInHierarchy)
         {
             currentTarget = FindNearestBuilding();
@@ -58,7 +61,6 @@ public class EnemyController : MonoBehaviour
             animator.SetTrigger("Attacking");
         }
     }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Unit"))
@@ -66,19 +68,36 @@ public class EnemyController : MonoBehaviour
             currentTarget = other.transform;
         }
     }
-    
-    void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Unit") && currentTarget == other.transform) {
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Unit") && currentTarget == other.transform)
+        {
             currentTarget = null;
         }
     }
 
     public void TakeDamage(float amount)
     {
+        if(dead) return;
         hp -= amount;
-        if (hp <= 0)
+        if (hp > 0)
         {
-            animator.SetTrigger("Attacking");
+            animator.SetTrigger("Attacked");
+        }
+        else
+        {
+            dead = true;
+            animator.SetBool("Dead", true);
+        }
+    }
+    public void DamageTarget()
+    {
+        if (currentTarget == null) return;
+        if (currentTarget.TryGetComponent<UnitController>(out UnitController unit))
+        {
+            Debug.Log("Unit Take Damage");
+            unit.TakeDamage(damage);
         }
     }
 

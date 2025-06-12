@@ -12,16 +12,17 @@ public class UnitController : MonoBehaviour
     public float damage = 3f;
     private int facingDirection = 1;
     public float attackCooldown = 1.3f;
+    public int level = 1;
     protected bool isDead;
-
-
-
-
-
     void Start()
     {
         animator = GetComponent<Animator>();
         // currentTarget = FindNearestEnemy();
+        
+    }
+    private void OnDestroy()
+    {
+        
     }
 
     void Update()
@@ -68,13 +69,24 @@ public class UnitController : MonoBehaviour
             animator.SetTrigger("Attack");
         }
     }
-
+    public void DamageTarget()
+    {
+        if (currentTarget == null) return;
+        if (currentTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
+        {
+            Debug.Log("Unit Take Damage");
+            enemy.TakeDamage(damage);
+        }
+    }
     public void TakeDamage(float amount)
     {
-        animator.SetTrigger("Attacked");
-
+        if(isDead) return;
         hp -= amount;
-        if (hp <= 0)
+        if (hp > 0)
+        {
+            animator.SetTrigger("Attacked");
+        }
+        else
         {
             isDead = true;
             animator.SetTrigger("Dead");
