@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|c:\\users\\ahmad\\desktop\\unity\\project\\empire-s-last-stand\\assets\\scripts\\bullets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\unitscript\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\unitscript\\playerarcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\playerarcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\projectiledamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projectiledamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\unitscript\\enemybomber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\enemybomber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\unitscript\\autoshooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\autoshooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|c:\\users\\ahmad\\desktop\\unity\\project\\empire-s-last-stand\\assets\\scripts\\unitscript\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\assets\\scripts\\unitscript\\player_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB6CB772-816D-74BD-8FCA-EA5B83C8E877}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitscript\\player_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProjectileDamage.cs",
-              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\ProjectileDamage.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ProjectileDamage.cs",
-              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\ProjectileDamage.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ProjectileDamage.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Unit.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Unit.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\Unit.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Unit.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\Unit.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T11:12:03.384Z"
+              "WhenOpened": "2025-06-09T08:00:46.522Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Bullets.cs",
-              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Bullets.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullets.cs",
-              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Bullets.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bullets.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EnemyBomber.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\EnemyBomber.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\EnemyBomber.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\EnemyBomber.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\EnemyBomber.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T01:25:29.15Z",
+              "WhenOpened": "2025-06-09T07:41:42.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
-              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Title": "PlayerArcher.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\PlayerArcher.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\PlayerArcher.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\PlayerArcher.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\PlayerArcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T01:24:02.314Z"
+              "WhenOpened": "2025-06-09T07:41:18.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AutoShooter.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\AutoShooter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\AutoShooter.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\AutoShooter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\AutoShooter.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAuwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T07:39:20.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Player_Bow.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Player_Bow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\Player_Bow.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Player_Bow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\Player_Bow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T06:01:43.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Arrow.cs",
+              "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Arrow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UnitScript\\Arrow.cs",
+              "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\UnitScript\\Arrow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UnitScript\\Arrow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T05:54:14.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
               "ToolTip": "C:\\Users\\ahmad\\Desktop\\Unity\\Project\\Empire-s-Last-Stand\\Assets\\Scripts\\Health.cs",
               "RelativeToolTip": "Assets\\Scripts\\Health.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAQwHgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T01:18:51.888Z"
+              "WhenOpened": "2025-05-27T01:18:51.888Z",
+              "EditorCaption": ""
             }
           ]
         }
