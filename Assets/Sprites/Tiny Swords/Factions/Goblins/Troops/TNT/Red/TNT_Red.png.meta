@@ -196,15 +196,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TNT_Red_Idle_0
+      name: TNT_Red_0
       rect:
         serializedVersion: 2
         x: 57
         y: 440
         width: 88
         height: 70
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,15 +218,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Idle_1
+      name: TNT_Red_1
       rect:
         serializedVersion: 2
         x: 250
         y: 440
         width: 85
         height: 70
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,15 +240,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Idle_2
+      name: TNT_Red_2
       rect:
         serializedVersion: 2
         x: 443
         y: 440
         width: 85
         height: 70
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,15 +262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Idle_3
+      name: TNT_Red_3
       rect:
         serializedVersion: 2
         x: 634
         y: 440
         width: 88
         height: 68
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,15 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Idle_4
+      name: TNT_Red_4
       rect:
         serializedVersion: 2
         x: 824
         y: 440
         width: 88
         height: 67
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,15 +306,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Idle_5
+      name: TNT_Red_5
       rect:
         serializedVersion: 2
         x: 1016
         y: 440
         width: 84
         height: 68
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -336,7 +336,7 @@ TextureImporter:
         width: 6
         height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,15 +350,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_0
+      name: TNT_Red_7
       rect:
         serializedVersion: 2
         x: 59
         y: 250
         width: 82
         height: 66
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,15 +372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_1
+      name: TNT_Red_8
       rect:
         serializedVersion: 2
         x: 252
         y: 250
         width: 82
         height: 69
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,15 +394,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_2
+      name: TNT_Red_9
       rect:
         serializedVersion: 2
         x: 443
         y: 250
         width: 85
         height: 62
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -416,15 +416,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_3
+      name: TNT_Red_10
       rect:
         serializedVersion: 2
         x: 633
         y: 250
         width: 87
         height: 66
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,15 +438,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_4
+      name: TNT_Red_11
       rect:
         serializedVersion: 2
         x: 824
         y: 250
         width: 84
         height: 69
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -460,7 +460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Chase_5
+      name: TNT_Red_12
       rect:
         serializedVersion: 2
         x: 1017
@@ -482,15 +482,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Attack_0
+      name: TNT_Red_13
       rect:
         serializedVersion: 2
         x: 54
         y: 56
         width: 79
         height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -504,15 +504,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Attack_1
+      name: TNT_Red_14
       rect:
         serializedVersion: 2
         x: 242
         y: 56
         width: 78
         height: 77
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -526,15 +526,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TNT_Red_Attack_2
+      name: TNT_Red_15
       rect:
         serializedVersion: 2
         x: 439
         y: 56
         width: 77
         height: 62
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -639,7 +639,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e8bd5227cd73d5f43bfde353a6e27ad2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -649,21 +649,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TNT_Red_Attack_0: -8362919833067389751
-      TNT_Red_Attack_1: -8159456244472171497
-      TNT_Red_Attack_2: 8258795194819198663
-      TNT_Red_Chase_0: 6965017248118912694
-      TNT_Red_Chase_1: -3503147640080845908
-      TNT_Red_Chase_2: 2920799376480564313
-      TNT_Red_Chase_3: -5227482290639326191
-      TNT_Red_Chase_4: 6442362681435007131
-      TNT_Red_Chase_5: -9053253831616230514
-      TNT_Red_Idle_0: 1723869735436879832
-      TNT_Red_Idle_1: -4575732086333183823
-      TNT_Red_Idle_2: -8545997469525324644
-      TNT_Red_Idle_3: 472558964566126397
-      TNT_Red_Idle_4: -3272573693725979801
-      TNT_Red_Idle_5: 4073718598777970583
+      TNT_Red_0: 1723869735436879832
+      TNT_Red_1: -4575732086333183823
+      TNT_Red_10: -5227482290639326191
+      TNT_Red_11: 6442362681435007131
+      TNT_Red_12: -9053253831616230514
+      TNT_Red_13: -8362919833067389751
+      TNT_Red_14: -8159456244472171497
+      TNT_Red_15: 8258795194819198663
+      TNT_Red_16: 3382624021105550442
+      TNT_Red_17: 1747851038808546189
+      TNT_Red_18: -1111592450808163120
+      TNT_Red_19: 4280689182580048338
+      TNT_Red_2: -8545997469525324644
+      TNT_Red_3: 472558964566126397
+      TNT_Red_4: -3272573693725979801
+      TNT_Red_5: 4073718598777970583
+      TNT_Red_6: -1850014194413969036
+      TNT_Red_7: 6965017248118912694
+      TNT_Red_8: -3503147640080845908
+      TNT_Red_9: 2920799376480564313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

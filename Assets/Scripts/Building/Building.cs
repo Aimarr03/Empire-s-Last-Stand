@@ -10,10 +10,12 @@ namespace Game.Buildings
         public int maxHP = 100;
         public int currentHP;
 
+        [Header("Upgrade Settings")]
         public int cost = 100;
         public int upgradeLevel = 1;
         public int maxUpgradeLevel = 2;
 
+        [Header("Sprite States")]
         public Sprite spriteConstruction;
         public Sprite spriteReady;
         public Sprite spriteDestroyed;
@@ -35,7 +37,7 @@ namespace Game.Buildings
 
         public virtual void SetConstructionSprite()
         {
-            if(spriteRenderer != null && spriteConstruction != null)
+            if (spriteRenderer != null && spriteConstruction != null)
             {
                 spriteRenderer.sprite = spriteConstruction;
             }
@@ -43,7 +45,7 @@ namespace Game.Buildings
 
         public virtual void SetReadySprite()
         {
-            if(spriteRenderer != null && spriteReady != null)
+            if (spriteRenderer != null && spriteReady != null)
             {
                 spriteRenderer.sprite = spriteReady;
             }
@@ -51,7 +53,7 @@ namespace Game.Buildings
 
         public virtual void SetDestroyedSprite()
         {
-            if(spriteRenderer != null && spriteDestroyed != null)
+            if (spriteRenderer != null && spriteDestroyed != null)
             {
                 spriteRenderer.sprite = spriteDestroyed;
             }
@@ -68,7 +70,7 @@ namespace Game.Buildings
             currentHP -= damage;
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP}");
 
-            if(currentHP <= 0)
+            if (currentHP <= 0)
             {
                 Destroyed();
             }
@@ -79,13 +81,12 @@ namespace Game.Buildings
             SetDestroyedSprite();
             Debug.Log($"{gameObject.name} destroyed.");
             OnDestroyed?.Invoke(this);
-            // Bisa destroy object setelah efek hancur jika mau
             // Destroy(gameObject);
         }
 
         public virtual void Upgrade()
         {
-            if(upgradeLevel < maxUpgradeLevel)
+            if (upgradeLevel < maxUpgradeLevel)
             {
                 upgradeLevel++;
                 Debug.Log($"{gameObject.name} upgraded to level {upgradeLevel}");
@@ -100,5 +101,9 @@ namespace Game.Buildings
         {
             Debug.Log($"{gameObject.name} NextRound called.");
         }
+
+        // Optional: Public getters for currentHP and maxHP if needed elsewhere
+        public int GetCurrentHP() => currentHP;
+        public int GetMaxHP() => maxHP;
     }
 }
