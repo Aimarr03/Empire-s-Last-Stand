@@ -15,6 +15,11 @@ public class UI_Building : MonoBehaviour
     [SerializeField] private Button upgradeButton;
     [SerializeField] private TextMeshProUGUI buildingDescription;
 
+    private RectTransform content;
+    private void Awake()
+    {
+        content = transform.GetChild(0).GetComponent<RectTransform>();
+    }
     public void SetupBuilding(Building building)
     {
         currentBuilding = building;
@@ -32,24 +37,58 @@ public class UI_Building : MonoBehaviour
     {
         Barrack barrackBuilding = currentBuilding as Barrack;
         buildingName.text = "Barracks";
-        buildingLevel.text = $"Level: {barrackBuilding.upgradeLevel}";
+        buildingLevel.text = $"Level: {barrackBuilding.currentLevel}";
         buildingDescription.text = "Descriptions: " +
             "This is your barracks. It will deploy troop to defend your kingdom\n" +
             $"Troop Type: {barrackBuilding.troopType}";
 
         HandleButtonUpgrade();
     }
+    public void TestButton()
+    {
+        Debug.Log("Test Button");
+    }
+    public void BuildAction()
+    {
+        if (currentBuilding == null)
+        {
+            Debug.Log("Building is not selected!");
+            return;
+        }
+        bool upgradable = currentBuilding.currentLevel < currentBuilding.maxUpgradeLevel;
+        if (currentBuilding.currentState == BuildingState.UnderConstruction)
+        {
+            Debug.Log("Upgrade Building: " +currentBuilding.gameObject.name);
+            currentBuilding.Build();
+            SetupBuilding(currentBuilding);
+            content.gameObject.SetActive(false);
+        }
+        else if (currentBuilding.currentState == BuildingState.Constructed)
+        {
+            currentBuilding.Upgrade();
+            SetupBuilding(currentBuilding);
+        }
+    }
     private void HandleButtonUpgrade()
     {
-        bool upgradable = currentBuilding.upgradeLevel < currentBuilding.maxUpgradeLevel;
-        bool buyable = GameplayManager.instance.CheckMoney(currentBuilding.cost);
-        upgradeButtonText.text = upgradable ? "Upgrade" : "Max!";
-        
+        bool upgradable = currentBuilding.currentLevel < currentBuilding.maxUpgradeLevel;
+        bool buyable = GameplayManager.instance.CheckMoney(currentBuilding.costToBuild);
+
+
+        //upgradeButton.onClick.RemoveAllListeners();
+        if (currentBuilding.currentState == BuildingState.UnderConstruction)
+        {
+            upgradeButtonText.text = "Construct";
+        }
+        else if(currentBuilding.currentState == BuildingState.Constructed)
+        {
+            upgradeButtonText.text = upgradable ? "Upgrade" : "Max!";
+        }
         buildingNextLevelCost.transform.parent.gameObject.SetActive(upgradable);
         upgradeButton.interactable = buyable && upgradable;
         if (upgradable)
         {
-            buildingNextLevelCost.text = $"{currentBuilding.cost}";
+            buildingNextLevelCost.text = $"{currentBuilding.costToBuild}";
         }
     }
     private void HandleTownHallInformation()

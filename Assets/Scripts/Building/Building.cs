@@ -4,38 +4,49 @@ using UnityEngine;
 
 namespace Game.Buildings
 {
+    public enum BuildingState
+    {
+        UnderConstruction,
+        Constructed,
+        Destructed
+    }
     public class Building : MonoBehaviour
     {
         public string buildingName;
-        public int maxHP = 100;
+        public int maxHP;
         public int currentHP;
 
-        public int cost = 100;
-        public int upgradeLevel = 1;
+        [Header("Upgrade Settings")]
+        public int costToBuild;
+        public bool upgradable = true;
+        public int currentLevel = 0;
         public int maxUpgradeLevel = 2;
 
+        [Header("Sprite States")]
         public Sprite spriteConstruction;
         public Sprite spriteReady;
         public Sprite spriteDestroyed;
 
         protected SpriteRenderer spriteRenderer;
+        protected Collider2D Collider;
+        public BuildingState currentState;
 
         public event Action<Building> OnDestroyed;
 
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            Collider = GetComponent<Collider2D>();
         }
 
         protected virtual void Start()
         {
-            currentHP = maxHP;
-            SetConstructionSprite();
+            
         }
 
         public virtual void SetConstructionSprite()
         {
-            if(spriteRenderer != null && spriteConstruction != null)
+            if (spriteRenderer != null && spriteConstruction != null)
             {
                 spriteRenderer.sprite = spriteConstruction;
             }
@@ -43,7 +54,7 @@ namespace Game.Buildings
 
         public virtual void SetReadySprite()
         {
-            if(spriteRenderer != null && spriteReady != null)
+            if (spriteRenderer != null && spriteReady != null)
             {
                 spriteRenderer.sprite = spriteReady;
             }
@@ -51,7 +62,7 @@ namespace Game.Buildings
 
         public virtual void SetDestroyedSprite()
         {
-            if(spriteRenderer != null && spriteDestroyed != null)
+            if (spriteRenderer != null && spriteDestroyed != null)
             {
                 spriteRenderer.sprite = spriteDestroyed;
             }
@@ -68,7 +79,7 @@ namespace Game.Buildings
             currentHP -= damage;
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP}");
 
-            if(currentHP <= 0)
+            if (currentHP <= 0)
             {
                 Destroyed();
             }
@@ -76,19 +87,31 @@ namespace Game.Buildings
 
         protected virtual void Destroyed()
         {
+            currentState = BuildingState.Destructed;
             SetDestroyedSprite();
             Debug.Log($"{gameObject.name} destroyed.");
             OnDestroyed?.Invoke(this);
-            // Bisa destroy object setelah efek hancur jika mau
-            // Destroy(gameObject);
         }
-
+        public void Build()
+        {
+            Debug.Log($"Build Building {gameObject.name}");
+            if (currentState != BuildingState.UnderConstruction)
+            {
+                Debug.Log("Building is Already Built!");
+                return;
+            }
+            Debug.Log($"Build Building {gameObject.name}");
+            currentState = BuildingState.Constructed;
+            currentLevel++;
+            SetReadySprite();
+        }
         public virtual void Upgrade()
         {
-            if(upgradeLevel < maxUpgradeLevel)
+            if (!upgradable) return;
+            if (currentLevel < maxUpgradeLevel)
             {
-                upgradeLevel++;
-                Debug.Log($"{gameObject.name} upgraded to level {upgradeLevel}");
+                currentLevel++;
+                Debug.Log($"{gameObject.name} upgraded to level {currentLevel}");
             }
             else
             {
@@ -100,5 +123,7 @@ namespace Game.Buildings
         {
             Debug.Log($"{gameObject.name} NextRound called.");
         }
+        public int GetCurrentHP() => currentHP;
+        public int GetMaxHP() => maxHP;
     }
 }

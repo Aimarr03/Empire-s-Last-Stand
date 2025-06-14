@@ -11,10 +11,14 @@ namespace Game.Buildings
         protected override void Start()
         {
             base.Start();
-            StartCoroutine(ConstructionDelay());
+            upgradable = false;
+            currentLevel = 1;
+            currentState = BuildingState.Constructed;
+            SetReadySprite();
+            //StartCoroutine(ConstructionDelay());
         }
 
-        private IEnumerator ConstructionDelay()
+        /*private IEnumerator ConstructionDelay()
         {
             yield return new WaitForSeconds(5f);  // Delay 5 detik
             FinishConstruction();                  // Ganti sprite ke ready (Castle_Blue)
@@ -26,6 +30,6 @@ namespace Game.Buildings
             Debug.Log("TownHall destroyed! Triggering Game Over.");
             OnGameOver?.Invoke();
             // Logic game over (UI/scene) bisa ditangani listener event ini
-        }
+        }*/
     }
 }

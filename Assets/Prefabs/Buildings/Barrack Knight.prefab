@@ -523,19 +523,28 @@ MonoBehaviour:
   buildingName: barracks
   maxHP: 100
   currentHP: 0
-  cost: 3
-  upgradeLevel: 1
+  costToBuild: 0
+  upgradable: 1
+  currentLevel: 0
   maxUpgradeLevel: 2
   spriteConstruction: {fileID: 21300000, guid: 04c154a58dfedb54c955fd3d40a43c4b, type: 3}
   spriteReady: {fileID: 21300000, guid: 3d22a63ec1662d248954bba815816dd8, type: 3}
   spriteDestroyed: {fileID: 21300000, guid: e915422d270c0eb4ab8f57130fd157aa, type: 3}
+  currentState: 0
   troopType: Knight
   troopPrefab: {fileID: 1845233471095826112, guid: 395c5711ff1b4704f914c85cd73489db, type: 3}
   spawnPoint: {fileID: 7520340445112565967}
   baseSpawnInterval: 10
   _ui: {fileID: 5137255671111738501}
-  baseTroopCount: 1
-  spawnSpreadRadius: 1.5
+  levelStats:
+  - maxHP: 100
+    costToBuild: 4
+    maxUnits: 4
+    spawnInterval: 4
+  - maxHP: 130
+    costToBuild: 6
+    maxUnits: 8
+    spawnInterval: 3
 --- !u!61 &924440274809006467
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -570,7 +579,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.96}
+  m_Offset: {x: 0, y: 0.575492}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -580,7 +589,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 1.92}
+  m_Size: {x: 1.28, y: 1.150984}
   m_EdgeRadius: 0
 --- !u!114 &418339903363447055
 MonoBehaviour:

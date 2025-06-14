@@ -10,7 +10,7 @@ public class ClickSelectionLogic : MonoBehaviour
     public LayerMask ground;
     public LayerMask uiLayer;
 
-    public GraphicRaycaster raycaster;
+    //public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
     public Camera cam;
     private void Awake()
@@ -28,6 +28,7 @@ public class ClickSelectionLogic : MonoBehaviour
                 return;
             }
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero, Mathf.Infinity, clickableLayer);
+            //Debug.Log("Collider " + hit.collider);
             if (hit.collider != null)
             {
                 GameObject hitObject = hit.collider.gameObject;

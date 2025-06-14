@@ -275,12 +275,14 @@ MonoBehaviour:
   buildingName: townhall
   maxHP: 100
   currentHP: 0
-  cost: 100
-  upgradeLevel: 1
+  costToBuild: 0
+  upgradable: 0
+  currentLevel: 0
   maxUpgradeLevel: 2
   spriteConstruction: {fileID: 21300000, guid: 99d578e9193639247ad0b3fad29325bc, type: 3}
   spriteReady: {fileID: 21300000, guid: 67741b8bdae47c542981d062e891716b, type: 3}
   spriteDestroyed: {fileID: 21300000, guid: 00dcc9b1ba4bbb74393461a2a53f4825, type: 3}
+  currentState: 0
 --- !u!61 &4714079709031058658
 BoxCollider2D:
   m_ObjectHideFlags: 0

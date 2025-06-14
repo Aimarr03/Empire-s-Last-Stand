@@ -14,7 +14,7 @@ public class Manager_UnitSelection : MonoBehaviour
     public List<GameObject> AllUnits = new List<GameObject>();
     public List<GameObject> SelectedUnits = new List<GameObject>();
     public UI_Building ui_building;
-    public Canvas selectedBuildingUI;
+    public RectTransform selectedBuildingUI;
     private GameObject _selectedBuilding;
     private void Awake()
     {
@@ -56,15 +56,24 @@ public class Manager_UnitSelection : MonoBehaviour
         {
             selectedBuildingUI.gameObject.SetActive(true);
             Vector3 buildingPos = _selectedBuilding.transform.position;
+            //Debug.Log("Building Pos in World: " + buildingPos);
 
             Vector3 ScreenBuildingPos = Camera.main.WorldToScreenPoint(buildingPos);
+            Vector3 ViewBuildingPos = Camera.main.WorldToViewportPoint(buildingPos);
+            //Debug.Log("Building Pos in ScreenPoint: " + ScreenBuildingPos);
+            //Debug.Log("Building Pos in Viewport: " + ViewBuildingPos);
+
             float halfWidth = Screen.width / 2;
             float halfHeight = Screen.height / 2;
+            //Debug.Log("Screen Size: " + halfHeight + " half height | " + halfWidth + " half width");
+            //Debug.Log("UI Building " + selectedBuildingUI.transform.position);
 
             Vector3 offsetPos = new Vector3(4, 2, 0);
-            offsetPos.x = ScreenBuildingPos.x > halfWidth ? -4 : 4;
-            offsetPos.y = ScreenBuildingPos.y > halfHeight? -2 : 2;
-            selectedBuildingUI.transform.position = buildingPos + offsetPos;
+            offsetPos.x = ScreenBuildingPos.x > halfWidth ? -80 : 80;
+            offsetPos.y = ScreenBuildingPos.y > halfHeight? -40 : 40;
+            
+            //selectedBuildingUI.transform.position = ScreenBuildingPos + offsetPos;
+            
             Building building = _selectedBuilding.GetComponent<Building>();
             ui_building.SetupBuilding(building);
         }
@@ -84,6 +93,7 @@ public class Manager_UnitSelection : MonoBehaviour
     }
     public void DragSelect(GameObject unitToAdd)
     {
+        if (!unitToAdd.CompareTag("Unit")) return;
         bool notContainUnit = !SelectedUnits.Contains(unitToAdd);
         if (notContainUnit)
         {
