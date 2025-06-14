@@ -3,7 +3,27 @@
   "WorkspaceRootPath": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\enemy\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\bullet\\basebullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\basebullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\bullet\\bomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\bomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\bullet\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\enemy\\torcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\enemy\\torcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|d:\\kuliah\\semester 6\\new folder\\empire\u2019s last stand\\assets\\scripts\\unit\\enemy\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\enemy\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,28 +31,8 @@
       "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\enemy\\thrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\bullet\\bomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\bomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|d:\\kuliah\\semester 6\\new folder\\empire\u2019s last stand\\assets\\scripts\\bullet\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\arrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\bullet\\basebullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet\\basebullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\archer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\archer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\unitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\enemy\\torcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\enemy\\torcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41035168-6BB6-CF88-2A95-6FB5E029710C}|Assembly-CSharp.csproj|D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\assets\\scripts\\unit\\archercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -126,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Torcher.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\Enemy\\Torcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Enemy\\Torcher.cs",
@@ -134,50 +134,51 @@
               "RelativeToolTip": "Assets\\Scripts\\Unit\\Enemy\\Torcher.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T17:28:27.277Z"
+              "WhenOpened": "2025-06-12T17:28:27.277Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "BaseBullet.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\BaseBullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet\\BaseBullet.cs",
               "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\BaseBullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet\\BaseBullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwB0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T17:05:51.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Bomb.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\Bomb.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet\\Bomb.cs",
               "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\Bomb.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet\\Bomb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T17:18:09.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Arrow.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\Arrow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet\\Arrow.cs",
               "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Bullet\\Arrow.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet\\Arrow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T17:02:35.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Thrower.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\Enemy\\Thrower.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Enemy\\Thrower.cs",
@@ -190,20 +191,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "EnemyController.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\Enemy\\EnemyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Enemy\\EnemyController.cs",
               "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\Enemy\\EnemyController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Unit\\Enemy\\EnemyController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAADwv2oAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwD4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T16:57:20.846Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "UnitController.cs",
+              "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\UnitController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\UnitController.cs",
+              "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\UnitController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Unit\\UnitController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:44:28.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Archer.cs",
               "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\Archer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Archer.cs",
@@ -212,19 +226,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T16:35:03.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UnitController.cs",
-              "DocumentMoniker": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\UnitController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\UnitController.cs",
-              "ToolTip": "D:\\Kuliah\\Semester 6\\New folder\\Empire\u2019s Last Stand\\Assets\\Scripts\\Unit\\UnitController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Unit\\UnitController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAYwFMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T16:44:28.679Z",
               "EditorCaption": ""
             },
             {
