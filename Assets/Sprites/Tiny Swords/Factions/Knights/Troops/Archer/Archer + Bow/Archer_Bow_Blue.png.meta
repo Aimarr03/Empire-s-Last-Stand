@@ -145,120 +145,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Archer_Bow_Blue_0
+      name: Archer_Bow_Blue_Attack_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 259
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9e71baf130541c30800000000000000
-      internalID: 4329173317399445151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Bow_Blue_1
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 251
-        width: 19
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0c0882330289b670800000000000000
-      internalID: 8555011917411257359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Bow_Blue_2
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 62
-        width: 48
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b52c550304938780800000000000000
-      internalID: -8681932915944446542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Bow_Blue_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 63
-        width: 20
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ecf56f1bfcf93c40800000000000000
-      internalID: 5492699376048798953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Bow_Blue_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 62
-        width: 55
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 241
+        y: 57
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,15 +171,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_5
+      name: Archer_Bow_Blue_Attack_2
       rect:
         serializedVersion: 2
         x: 475
         y: 62
-        width: 67
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,15 +193,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_6
+      name: Archer_Bow_Blue_Attack_3
       rect:
         serializedVersion: 2
         x: 641
         y: 59
-        width: 74
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,15 +215,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_7
+      name: Archer_Bow_Blue_Attack_4
       rect:
         serializedVersion: 2
         x: 828
         y: 59
-        width: 73
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,15 +237,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_8
+      name: Archer_Bow_Blue_Attack_5
       rect:
         serializedVersion: 2
         x: 1020
         y: 59
-        width: 73
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -360,89 +259,89 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_9
+      name: Archer_Bow_Blue_Iddle
       rect:
         serializedVersion: 2
-        x: 1202
-        y: 73
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 66
+        y: 244
+        width: 72
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 739d834535ec9a680800000000000000
-      internalID: -8743230344272488137
+      spriteID: 4be7ece3b26f8154aac69e838b6d4a91
+      internalID: 922123757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_10
+      name: Archer_Bow_Blue_Attack_0
       rect:
         serializedVersion: 2
-        x: 1265
-        y: 59
-        width: 19
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 45
+        y: 60
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cefef6e9bf3ce8680800000000000000
-      internalID: -8750841540471951380
+      spriteID: 2a7417eebfb0e1248949083fcf9b98a3
+      internalID: 820216749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Archer_Bow_Blue_11
+      name: Archer_Bow_Blue_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 57
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4018a712010c20247afc0e3a1e69257d
+      internalID: -738211402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_Bow_Blue_Attack_7
       rect:
         serializedVersion: 2
         x: 1409
-        y: 67
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 53
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7500a66a8bcaa3320800000000000000
-      internalID: 2538531249042620503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Archer_Bow_Blue_12
-      rect:
-        serializedVersion: 2
-        x: 1454
-        y: 57
-        width: 19
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b22eda13aaf97f20800000000000000
-      internalID: 3421040970401981108
+      spriteID: ebcb4ad9238e0824db5481ef64970c8d
+      internalID: -560358621
       vertices: []
       indices: 
       edges: []
@@ -451,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2aabdcef05b215f42b295192fb73c8e0
     internalID: 0
     vertices: []
     indices: 
@@ -461,19 +360,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Archer_Bow_Blue_0: 4329173317399445151
-      Archer_Bow_Blue_1: 8555011917411257359
-      Archer_Bow_Blue_10: -8750841540471951380
-      Archer_Bow_Blue_11: 2538531249042620503
-      Archer_Bow_Blue_12: 3421040970401981108
-      Archer_Bow_Blue_2: -8681932915944446542
-      Archer_Bow_Blue_3: 5492699376048798953
-      Archer_Bow_Blue_4: -6841447439412970388
-      Archer_Bow_Blue_5: -2523372667273648364
-      Archer_Bow_Blue_6: -1019287073827455614
-      Archer_Bow_Blue_7: 5112643037596333782
-      Archer_Bow_Blue_8: -3112607047936341857
-      Archer_Bow_Blue_9: -8743230344272488137
+      Archer_Bow_Blue_Attack_0: 820216749
+      Archer_Bow_Blue_Attack_1: -6841447439412970388
+      Archer_Bow_Blue_Attack_2: -2523372667273648364
+      Archer_Bow_Blue_Attack_3: -1019287073827455614
+      Archer_Bow_Blue_Attack_4: 5112643037596333782
+      Archer_Bow_Blue_Attack_5: -3112607047936341857
+      Archer_Bow_Blue_Attack_6: -738211402
+      Archer_Bow_Blue_Attack_7: -560358621
+      Archer_Bow_Blue_Iddle: 922123757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
