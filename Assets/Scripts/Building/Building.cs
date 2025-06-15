@@ -1,6 +1,9 @@
+using DG.Tweening;
 using System;
 using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 namespace Game.Buildings
 {
@@ -33,22 +36,71 @@ namespace Game.Buildings
 
         public event Action<Building> OnDestroyed;
 
+        [Header("UI")]
+        [SerializeField] protected Canvas UI_Detail;
+        [SerializeField] protected Image backgroundHpBar;
+        [SerializeField] protected Image hpBar;
+
+        [SerializeField] protected Light2D Light;
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             Collider = GetComponent<Collider2D>();
+            Light.intensity = 0;
+            UI_Detail.gameObject.SetActive(false);
         }
 
         protected virtual void Start()
         {
-            
+            GameplayManager.instance.ChangeState += Instance_ChangeState;
         }
+        private void OnDestroy()
+        {
+            GameplayManager.instance.ChangeState -= Instance_ChangeState;
+        }
+
+        protected virtual void Instance_ChangeState()
+        {
+            Collider.enabled = currentLevel > 0;
+            if (GameplayManager.instance.gameState == GameState.Morning)
+            {
+                if (currentLevel > 0)
+                {
+                    DOTween.To(() => Light.intensity,
+                       x => Light.intensity = x,
+                       0f, 1.5f);
+                    UI_Detail.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Collider.enabled = true;
+                }
+                
+            }
+            else
+            {
+                if (currentLevel > 0)
+                {
+                    UI_Detail.gameObject.SetActive(true);
+                    DOTween.To(() => Light.intensity,
+                       x => Light.intensity = x,
+                       1f, 1.5f);
+                }
+                else
+                {
+                    Collider.enabled = false;
+                }
+                
+            }
+        }
+        
 
         public virtual void SetConstructionSprite()
         {
             if (spriteRenderer != null && spriteConstruction != null)
             {
                 spriteRenderer.sprite = spriteConstruction;
+                UI_Detail.gameObject.SetActive(true);
             }
         }
 
@@ -78,7 +130,8 @@ namespace Game.Buildings
         {
             currentHP -= damage;
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP}");
-
+            backgroundHpBar.gameObject.SetActive(true);
+            hpBar.fillAmount = currentHP / maxHP;
             if (currentHP <= 0)
             {
                 Destroyed();
@@ -90,9 +143,10 @@ namespace Game.Buildings
             currentState = BuildingState.Destructed;
             SetDestroyedSprite();
             Debug.Log($"{gameObject.name} destroyed.");
+            UI_Detail.gameObject.SetActive(false);
             OnDestroyed?.Invoke(this);
         }
-        public void Build()
+        public virtual void Build()
         {
             Debug.Log($"Build Building {gameObject.name}");
             if (currentState != BuildingState.UnderConstruction)
@@ -101,6 +155,7 @@ namespace Game.Buildings
                 return;
             }
             Debug.Log($"Build Building {gameObject.name}");
+            GameplayManager.instance.UseMoney(costToBuild);
             currentState = BuildingState.Constructed;
             currentLevel++;
             SetReadySprite();
@@ -110,6 +165,7 @@ namespace Game.Buildings
             if (!upgradable) return;
             if (currentLevel < maxUpgradeLevel)
             {
+                GameplayManager.instance.UseMoney(costToBuild);
                 currentLevel++;
                 Debug.Log($"{gameObject.name} upgraded to level {currentLevel}");
             }

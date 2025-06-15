@@ -15,6 +15,7 @@ namespace Game.Buildings
             currentLevel = 1;
             currentState = BuildingState.Constructed;
             SetReadySprite();
+            UI_Detail.gameObject.SetActive(true);
             //StartCoroutine(ConstructionDelay());
         }
 

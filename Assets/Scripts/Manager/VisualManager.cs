@@ -20,4 +20,13 @@ public class VisualManager : MonoBehaviour
                    x => globalLight.color = x,
                    nightColor, 1.5f);
     }
+    public void ChangeToDay()
+    {
+        DOTween.To(() => globalLight.intensity,
+                   x => globalLight.intensity = x,
+                   1f, 1.5f);
+        DOTween.To(() => globalLight.color,
+                   x => globalLight.color = x,
+                   Color.white, 1.5f);
+    }
 }

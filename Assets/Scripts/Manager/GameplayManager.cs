@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -31,6 +32,8 @@ public class GameplayManager : MonoBehaviour
     private float preparation_maxDuration;
 
     private int currentMoney;
+
+    public event Action ChangeState;
     private void Awake()
     {
         if (instance == null)
@@ -90,8 +93,8 @@ public class GameplayManager : MonoBehaviour
         cameraPos.y = Mathf.Clamp(cameraPos.y, boundary.min.y + halfCameraHeightSize, boundary.max.y - halfCameraHeightSize);
 
         objectToFollow.position = cameraPos;
-
     }
+
 
     private void ActionPause_performed(InputAction.CallbackContext obj)
     {
@@ -108,6 +111,13 @@ public class GameplayManager : MonoBehaviour
         Debug.Log("Action - Enemy Incoming - Wave: " + currentNight);
         gameState = GameState.Night;
         visualManager.ChangeToNight();
+        ChangeState?.Invoke();
+    }
+    public void BattleEnded()
+    {
+        gameState = GameState.Morning;
+        visualManager.ChangeToDay();
+        ChangeState?.Invoke();
     }
 
     public bool CheckMoney(int cost) => currentMoney >= cost;
