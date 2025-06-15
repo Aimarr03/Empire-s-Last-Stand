@@ -31,6 +31,12 @@ public class UI_Building : MonoBehaviour
             case "barracks":
                 HandleBarracks();
                 break;
+            case "tower":
+                HandleTower();
+                break;
+            case "goldmine":
+                HandleGoldMine();
+                break;
         }
     }
     private void HandleBarracks()
@@ -41,6 +47,26 @@ public class UI_Building : MonoBehaviour
         buildingDescription.text = "Descriptions: " +
             "This is your barracks. It will deploy troop to defend your kingdom\n" +
             $"Troop Type: {barrackBuilding.troopType}";
+
+        HandleButtonUpgrade();
+    }
+    private void HandleGoldMine()
+    {
+        GoldMine towerBuilding = currentBuilding as GoldMine;
+        buildingName.text = "Gold Mine";
+        buildingLevel.text = $"Level: {towerBuilding.currentLevel}";
+        buildingDescription.text = "Descriptions: " +
+            "This is a Gold Mine. Build it, and you gain money per night\n" +
+            $"But you must make sure it is not destroyed";
+        HandleButtonUpgrade();
+    }
+    private void HandleTower()
+    {
+        Tower towerBuilding = currentBuilding as Tower;
+        buildingName.text = "Tower";
+        buildingLevel.text = $"Level: {towerBuilding.currentLevel}";
+        buildingDescription.text = "Descriptions: " +
+            "This shall be your main Defense. It will help your  army defend your base";
 
         HandleButtonUpgrade();
     }

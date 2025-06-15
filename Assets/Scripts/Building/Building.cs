@@ -37,22 +37,24 @@ namespace Game.Buildings
         public event Action<Building> OnDestroyed;
 
         [Header("UI")]
-        [SerializeField] protected Canvas UI_Detail;
+        [SerializeField] protected Canvas UI_Canva;
         [SerializeField] protected Image backgroundHpBar;
         [SerializeField] protected Image hpBar;
-
+        [SerializeField] protected RectTransform ui_detail;
         [SerializeField] protected Light2D Light;
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             Collider = GetComponent<Collider2D>();
             Light.intensity = 0;
-            UI_Detail.gameObject.SetActive(false);
+            UI_Canva.gameObject.SetActive(false);
         }
 
         protected virtual void Start()
         {
             GameplayManager.instance.ChangeState += Instance_ChangeState;
+            UI_Canva.gameObject.SetActive(false);
+            backgroundHpBar.gameObject.SetActive(false);
         }
         private void OnDestroy()
         {
@@ -69,7 +71,7 @@ namespace Game.Buildings
                     DOTween.To(() => Light.intensity,
                        x => Light.intensity = x,
                        0f, 1.5f);
-                    UI_Detail.gameObject.SetActive(false);
+                    backgroundHpBar.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -81,7 +83,7 @@ namespace Game.Buildings
             {
                 if (currentLevel > 0)
                 {
-                    UI_Detail.gameObject.SetActive(true);
+                    UI_Canva.gameObject.SetActive(true);
                     DOTween.To(() => Light.intensity,
                        x => Light.intensity = x,
                        1f, 1.5f);
@@ -100,7 +102,6 @@ namespace Game.Buildings
             if (spriteRenderer != null && spriteConstruction != null)
             {
                 spriteRenderer.sprite = spriteConstruction;
-                UI_Detail.gameObject.SetActive(true);
             }
         }
 
@@ -109,6 +110,7 @@ namespace Game.Buildings
             if (spriteRenderer != null && spriteReady != null)
             {
                 spriteRenderer.sprite = spriteReady;
+                UI_Canva.gameObject.SetActive(true);
             }
         }
 
@@ -143,7 +145,7 @@ namespace Game.Buildings
             currentState = BuildingState.Destructed;
             SetDestroyedSprite();
             Debug.Log($"{gameObject.name} destroyed.");
-            UI_Detail.gameObject.SetActive(false);
+            UI_Canva.gameObject.SetActive(false);
             OnDestroyed?.Invoke(this);
         }
         public virtual void Build()

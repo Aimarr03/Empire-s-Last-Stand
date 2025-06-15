@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -112,10 +113,17 @@ public class GameplayManager : MonoBehaviour
         gameState = GameState.Night;
         visualManager.ChangeToNight();
         ChangeState?.Invoke();
+        TestChange();
+    }
+    public async void TestChange()
+    {
+        await Task.Delay(2500);
+        BattleEnded();
     }
     public void BattleEnded()
     {
         gameState = GameState.Morning;
+        currentNight++;
         visualManager.ChangeToDay();
         ChangeState?.Invoke();
     }
