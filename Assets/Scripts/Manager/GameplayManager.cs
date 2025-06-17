@@ -113,7 +113,7 @@ public class GameplayManager : MonoBehaviour
         gameState = GameState.Night;
         visualManager.ChangeToNight();
         ChangeState?.Invoke();
-        TestChange();
+        //TestChange();
     }
     public async void TestChange()
     {

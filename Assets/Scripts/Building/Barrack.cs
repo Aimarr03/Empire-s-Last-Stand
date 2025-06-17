@@ -14,6 +14,14 @@ namespace Game.Buildings
         public int maxUnits;
         public float spawnInterval;
     }
+    [System.Serializable]
+    public class UnitStats
+    {
+        public float maxHP;
+        public float attackRange;
+        public float damage;
+        public float attackCooldown;
+    }
 
     public class Barrack : Building
     {
@@ -25,7 +33,9 @@ namespace Game.Buildings
 
         [Header("Level-Based Stats")]
         public List<BarrackStats> levelStats = new List<BarrackStats>();
+        public List<UnitStats> unitStats = new List<UnitStats>();
         private Coroutine spawnRoutine;
+        private List<UnitController> unitsDeployed = new List<UnitController>();
 
         private int troopSpawned = 0;
         private float currentInterval;
@@ -35,7 +45,18 @@ namespace Game.Buildings
         protected override void Start()
         {
             base.Start();
+            UnitController.OnKilled += UnitController_OnKilled;
             SetConstructionSprite();   
+        }
+        private void OnDestroy()
+        {
+            UnitController.OnKilled -= UnitController_OnKilled;
+        }
+
+        private void UnitController_OnKilled(UnitController unit)
+        {
+            if(unitsDeployed.Contains(unit)) unitsDeployed.Remove(unit);
+            troopSpawned--;
         }
 
         protected override void Instance_ChangeState()
@@ -99,8 +120,10 @@ namespace Game.Buildings
             }
 
             Vector3 spawnPos = spawnPoint.position;
-            Instantiate(troopPrefab, spawnPos, Quaternion.identity);
+            UnitController unit = Instantiate(troopPrefab, spawnPos, Quaternion.identity);
             troopSpawned++;
+            unit.SetupTroop(unitStats[currentLevel-1], spawnPos);
+            unitsDeployed.Add(unit);
             Debug.Log($"{gameObject.name} spawned troop #{troopSpawned}");
         }
         private void Update()

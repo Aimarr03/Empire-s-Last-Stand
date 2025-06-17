@@ -60,7 +60,8 @@ namespace Game.Buildings
 
             if(currentEnemyTarget == null)
             {
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, data[currentLevel].range, Vector2.right);
+                Debug.Log("Detecting Enemy Attempt");
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, data[currentLevel].range, Vector2.zero);
                 if(hit.collider.TryGetComponent(out EnemyController enemy))
                 {
                     currentEnemyTarget = enemy;
@@ -75,7 +76,7 @@ namespace Game.Buildings
                     return;
                 }
                 currentInterval += Time.deltaTime;
-                if(currentInterval < data[currentLevel].attackSpeed)
+                if(currentInterval >= data[currentLevel].attackSpeed)
                 {
                     currentInterval = 0;
                     CreateArrow();

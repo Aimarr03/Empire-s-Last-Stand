@@ -1176,6 +1176,15 @@ MonoBehaviour:
     costToBuild: 6
     maxUnits: 8
     spawnInterval: 3
+  unitStats:
+  - maxHP: 20
+    attackRange: 4
+    damage: 2
+    attackCooldown: 1.6
+  - maxHP: 30
+    attackRange: 4.5
+    damage: 3
+    attackCooldown: 1.4
   backgroundProgressDeploy: {fileID: 6118059438000056601}
   ProgressDeploy: {fileID: 3246179112607571552}
 --- !u!61 &4109175298737801005

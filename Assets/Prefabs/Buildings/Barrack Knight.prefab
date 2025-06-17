@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -701,6 +701,15 @@ MonoBehaviour:
     costToBuild: 6
     maxUnits: 8
     spawnInterval: 3
+  unitStats:
+  - maxHP: 40
+    attackRange: 1
+    damage: 3
+    attackCooldown: 1.5
+  - maxHP: 60
+    attackRange: 1.1
+    damage: 4
+    attackCooldown: 1.4
   backgroundProgressDeploy: {fileID: 6967996398331733952}
   ProgressDeploy: {fileID: 4366387663341291910}
 --- !u!61 &924440274809006467

@@ -131,9 +131,9 @@ namespace Game.Buildings
         public virtual void TakeDamage(int damage)
         {
             currentHP -= damage;
-            Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP}");
+            Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP} | percentage: {((float)currentHP)/maxHP}");
             backgroundHpBar.gameObject.SetActive(true);
-            hpBar.fillAmount = currentHP / maxHP;
+            hpBar.fillAmount = ((float)currentHP) / maxHP;
             if (currentHP <= 0)
             {
                 Destroyed();
