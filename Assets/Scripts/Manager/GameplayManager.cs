@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -100,7 +101,7 @@ public class GameplayManager : MonoBehaviour
 
     private void ActionPause_performed(InputAction.CallbackContext obj)
     {
-        pause = !pause;
+        Pause();
         Debug.Log("Action - Check Paused = " + pause);
     }
     public void BattleStart()
@@ -141,6 +142,7 @@ public class GameplayManager : MonoBehaviour
     }
     public void LoseTheGame()
     {
+        Debug.Log("Set game to Lose");
         pause = true;
         gameState = GameState.Over;
         resultStatus = "lose";
@@ -168,6 +170,16 @@ public class GameplayManager : MonoBehaviour
         Debug.Log($"Economy - Money Gain: {reward} - Total Current Money: {currentMoney}");
         ui_gameplay.UpdateGoldText(currentMoney);
     }
+    public void Pause()
+    {
+        pause = !pause;
+        visualManager.DisplayPause(pause);
+    }
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadSceneAsync(scene);
+    }
+    
 }
 public enum GameState
 {

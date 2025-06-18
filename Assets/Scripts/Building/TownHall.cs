@@ -6,8 +6,6 @@ namespace Game.Buildings
 {
     public class TownHall : Building
     {
-        public static event System.Action OnGameOver;
-
         protected override void Destroyed()
         {
             base.Destroyed();

@@ -120,6 +120,14 @@ namespace Game.Buildings
             }
 
             Vector3 spawnPos = spawnPoint.position;
+            float x = spawnPos.x;
+            x = UnityEngine.Random.Range(transform.position.x - 1, x + 2);
+            float y = spawnPos.y;
+            y = UnityEngine.Random.Range(transform.position.y - 1, y + 5);
+
+            spawnPos.x = x;
+            spawnPos.y = y;
+            
             UnitController unit = Instantiate(troopPrefab, spawnPos, Quaternion.identity);
             troopSpawned++;
             unit.SetupTroop(unitStats[currentLevel-1], spawnPos);

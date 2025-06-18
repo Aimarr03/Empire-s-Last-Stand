@@ -133,6 +133,7 @@ namespace Game.Buildings
 
         public virtual void TakeDamage(int damage)
         {
+            if (currentState != BuildingState.Constructed) return;
             currentHP -= damage;
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP} | percentage: {((float)currentHP)/maxHP}");
             backgroundHpBar.gameObject.SetActive(true);
@@ -152,6 +153,7 @@ namespace Game.Buildings
 
         protected virtual void Destroyed()
         {
+            if(currentState == BuildingState.Destructed) return;
             currentState = BuildingState.Destructed;
             ExplodeParticle.Play();
             SetDestroyedSprite();
