@@ -42,7 +42,8 @@ public class GameplayManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            GainMoney(10);
+            currentNight = 4;
+            GainMoney(20);
         }
         else
         {
@@ -133,8 +134,14 @@ public class GameplayManager : MonoBehaviour
     {
         gameState = GameState.Morning;
         currentNight++;
-        visualManager.ChangeToDay();
+        if(currentNight == 5)
+        {
+            Debug.Log("Winning");
+            visualManager.DisplayVictory();
+        }
         
+        visualManager.ChangeToDay();
+
     }
     public void UpdateBattleEnded()
     {

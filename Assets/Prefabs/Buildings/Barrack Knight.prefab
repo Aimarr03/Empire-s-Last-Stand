@@ -687,8 +687,8 @@ MonoBehaviour:
   UI_Canva: {fileID: 5137255671111738501}
   backgroundHpBar: {fileID: 7119021954346879910}
   hpBar: {fileID: 7123707601264610463}
-  ui_detail: {fileID: 0}
   Light: {fileID: 7910235893385699836}
+  levelText: {fileID: 6435788938715987934}
   troopType: Knight
   troopPrefab: {fileID: 6817452214749145475, guid: e371a45aca31723458752f20b4507c7e, type: 3}
   spawnPoint: {fileID: 7520340445112565967}

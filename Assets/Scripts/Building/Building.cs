@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using System.Threading.Tasks;
+using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -42,8 +43,8 @@ namespace Game.Buildings
         [SerializeField] protected Canvas UI_Canva;
         [SerializeField] protected Image backgroundHpBar;
         [SerializeField] protected Image hpBar;
-        [SerializeField] protected RectTransform ui_detail;
         [SerializeField] protected Light2D Light;
+        [SerializeField] protected TextMeshProUGUI levelText;
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -115,6 +116,15 @@ namespace Game.Buildings
                 spriteRenderer.sprite = spriteReady;
                 UI_Canva.gameObject.SetActive(true);
             }
+            if(buildingName != "townhall")
+            {
+                Vector3 posBuffer = transform.position;
+                Vector3 effectBuffer = posBuffer + new Vector3(0, 1, 0);
+                transform.position = effectBuffer;
+                transform.DOMove(posBuffer, 0.65f).SetEase(Ease.OutBounce);
+                transform.DOScaleX(1.2f, 0.17f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleX(1, 0.5f).SetEase(Ease.OutBounce));
+                transform.DOScaleY(0.7f, 0.17f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleY(1, 0.5f).SetEase(Ease.OutBounce));
+            }
         }
 
         public virtual void SetDestroyedSprite()
@@ -157,6 +167,7 @@ namespace Game.Buildings
             currentState = BuildingState.Destructed;
             ExplodeParticle.Play();
             SetDestroyedSprite();
+            Collider.enabled = false;
             Debug.Log($"{gameObject.name} destroyed.");
             UI_Canva.gameObject.SetActive(false);
             OnDestroyed?.Invoke(this);
@@ -182,6 +193,7 @@ namespace Game.Buildings
             {
                 GameplayManager.instance.UseMoney(costToBuild);
                 currentLevel++;
+                levelText.text = currentLevel.ToString();
                 Debug.Log($"{gameObject.name} upgraded to level {currentLevel}");
             }
             else

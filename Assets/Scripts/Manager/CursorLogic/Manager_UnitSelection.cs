@@ -82,6 +82,30 @@ public class Manager_UnitSelection : MonoBehaviour
             ui_building.SetupBuilding(building);
         }
     }
+    public void CommandTroops(Vector3 pos)
+    {
+        if (SelectedUnits.Count == 0) return;
+        float row = 0;
+        float column = 0;
+        int index = 0;
+        foreach (var unit in SelectedUnits)
+        {
+            UnitController unitController = unit.GetComponent<UnitController>();
+            Vector2 targetPos = new Vector2(pos.x + column, pos.y + row);
+            unitController.CommandTroop(pos);
+            index++;
+            if (index % 4 == 0)
+            {
+                row += 0.65f;
+                column = 0;
+            }
+            else
+            {
+                column += 0.65f;
+            }
+        }
+    }
+        
     public void ShiftSelectUnit(GameObject unitToAdd)
     {
         bool notContainUnit = !SelectedUnits.Contains(unitToAdd);

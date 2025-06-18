@@ -11,6 +11,7 @@ public class VisualManager : MonoBehaviour
     [SerializeField] Light2D globalLight;
     [SerializeField] Color nightColor;
     [SerializeField] CanvasGroup gameplayPanel;
+    [SerializeField] RectTransform pauseButton;
     [SerializeField] private Volume volume;
     private Vignette vignette;
     private float bufferIntensity;
@@ -118,7 +119,7 @@ public class VisualManager : MonoBehaviour
         {
             await Task.Delay(300);
             GameplayManager.instance.LoadScene(0);
-        });
+        }).SetUpdate(true);
     }
     public void Restart()
     {
@@ -128,7 +129,7 @@ public class VisualManager : MonoBehaviour
         {
             await Task.Delay(300);
             GameplayManager.instance.LoadScene(1);
-        });
+        }).SetUpdate(true);
     }
     public void DisplayPause(bool value)
     {
@@ -157,6 +158,32 @@ public class VisualManager : MonoBehaviour
         losePanel.transform.localScale = Vector3.one * 0.7f;
         losePanel.alpha = 1;
         losePanel.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
+    }
+    public async void DisplayVictory()
+    {
+        await Task.Delay(2200);
+        pauseButton.gameObject.SetActive(false);
+        gameplayPanel.DOFade(0, 1.2f);
+        Debug.Log("Preparing to Displaying Victory");
+        winPanel.alpha = 0;
+        winPanel.gameObject.SetActive(true);
 
+        DisplayResult.alpha = 0;
+        DisplayResult.gameObject.SetActive(true);
+        DisplayText.text = "VICTORY";
+        DisplayText.color = Color.red;
+        await Task.Delay(600);
+
+        Debug.Log("Displaying Result panel");
+        await DisplayResult.DOFade(1, 0.5f).AsyncWaitForCompletion();
+        await Task.Delay(1000);
+
+        await DisplayResult.DOFade(0, 1.5f).AsyncWaitForCompletion();
+        await Task.Delay(500);
+
+        Debug.Log("Displaying lose panel");
+        winPanel.transform.localScale = Vector3.one * 0.7f;
+        winPanel.alpha = 1;
+        winPanel.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
     }
 }

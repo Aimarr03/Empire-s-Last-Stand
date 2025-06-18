@@ -39,6 +39,16 @@ public class ClickSelectionLogic : MonoBehaviour
                 Manager_UnitSelection.Instance.DeselectAll();
             }
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("On a UI");
+                return;
+            }
+            Manager_UnitSelection.Instance.CommandTroops(worldPoint);
+        }
     }
     public bool IsPointerOverUIElement()
     {

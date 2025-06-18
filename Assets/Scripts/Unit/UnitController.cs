@@ -9,6 +9,7 @@ public class UnitController : MonoBehaviour
     public float currentHP = 40f;
     public float maxHP = 40f;
     public Transform currentTarget;
+    public SpriteRenderer spriteRenderer;
     private Animator animator;
     public float attackRange = 2f;
     float lastAttackTime = 0f;
@@ -17,6 +18,7 @@ public class UnitController : MonoBehaviour
     public float attackCooldown = 1.3f;
     public int level = 1;
     protected bool isDead;
+    [SerializeField] Collider2D collideArea;
     [SerializeField] Collider2D triggerArea;
     [SerializeField] private Vector3 StartPosition;
     [Header("UI")]
@@ -24,8 +26,14 @@ public class UnitController : MonoBehaviour
     [SerializeField] protected Image hpBar;
     private Barrack currentBarrack;
 
+    public bool commanded = false;
+    public Vector3 Target = Vector3.zero;
     public static event Action<UnitController> OnKilled;
-    
+    public void CommandTroop(Vector3 pos)
+    {
+        commanded = true;
+        Target = pos;
+    }
     public void SetupTroop(UnitStats stats, Vector3 startPos)
     {
         maxHP = stats.maxHP;
@@ -40,6 +48,7 @@ public class UnitController : MonoBehaviour
 
     private void Awake()
     {
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         triggerArea.enabled = GameplayManager.instance.gameState == GameState.Night;
     }
     void Start()
@@ -69,11 +78,25 @@ public class UnitController : MonoBehaviour
         //     currentTarget = FindNearestEnemy();
         //     if (currentTarget == null) return;
         // }
+        if (GameplayManager.instance.pause) return;
         if (isDead)
         {
             return;
         }
-        
+        if (commanded)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Target, moveSpeed * Time.deltaTime);
+            if ((Target.x > transform.position.x && facingDirection == -1) ||
+                    (Target.x < transform.position.x && facingDirection == 1))
+            {
+                Flip();
+            }
+            if (Vector2.Distance(transform.position, Target) < 2)
+            {
+                commanded = false;
+            }
+            return;
+        }
 
         if (currentTarget != null)
         {
@@ -94,11 +117,14 @@ public class UnitController : MonoBehaviour
                 animator.SetBool("Moving", false);
                 AttackTarget();
             }
+        }
+        else
+        {
 
         }
 
     }
-
+    
     void AttackTarget()
     {
         if (Time.time - lastAttackTime >= attackCooldown)
@@ -131,6 +157,7 @@ public class UnitController : MonoBehaviour
             isDead = true;
             canvas.gameObject.SetActive(false);
             animator.SetTrigger("Dead");
+            collideArea.enabled = false;
         }
     }
 

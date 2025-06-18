@@ -110,6 +110,27 @@ public class EnemyController : MonoBehaviour
             EnemyDie?.Invoke(enemyType);
         }
     }
+    public void DoneAttacking()
+    {
+        if (currentTarget == null) return;
+        bool findAnotherTarget = false;
+        if (currentTarget.TryGetComponent<UnitController>(out UnitController unit))
+        {
+            findAnotherTarget = unit.GetDeadStatus();
+        }
+        if (currentTarget.TryGetComponent<Building>(out Building build))
+        {
+            findAnotherTarget = build.currentState != BuildingState.Constructed;
+        }
+        if (findAnotherTarget)
+        {
+            currentTarget = FindNearestBuilding();
+            if (currentTarget == null)
+            {
+                animator.SetBool("Moving", false);
+            }
+        }
+    }
     public void DamageTarget()
     {
         if (currentTarget == null) return;
@@ -120,7 +141,7 @@ public class EnemyController : MonoBehaviour
             unit.TakeDamage(damage);
             findAnotherTarget = unit.GetDeadStatus();
         }
-        if(currentTarget.TryGetComponent<Building>(out Building build))
+        else if(currentTarget.TryGetComponent<Building>(out Building build))
         {
             Debug.Log("Building Take Damage");
             build.TakeDamage((int)damage);

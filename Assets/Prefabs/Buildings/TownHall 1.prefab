@@ -330,8 +330,8 @@ MonoBehaviour:
   UI_Canva: {fileID: 6804360622553289257}
   backgroundHpBar: {fileID: 5460191213548682318}
   hpBar: {fileID: 6982179508193534733}
-  ui_detail: {fileID: 0}
   Light: {fileID: 8442452273994505183}
+  levelText: {fileID: 291239364347192097}
 --- !u!61 &4714079709031058658
 BoxCollider2D:
   m_ObjectHideFlags: 0

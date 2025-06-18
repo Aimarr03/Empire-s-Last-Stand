@@ -501,8 +501,8 @@ MonoBehaviour:
   UI_Canva: {fileID: 3294802543926199637}
   backgroundHpBar: {fileID: 4261593514787448334}
   hpBar: {fileID: 2546843099133444318}
-  ui_detail: {fileID: 0}
   Light: {fileID: 7399690344868471590}
+  levelText: {fileID: 7816128280237865362}
   data:
   - costToBuild: 3
     goldGain: 0

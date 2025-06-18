@@ -72,20 +72,20 @@ MonoBehaviour:
     throwerSpawn: 0
     bomberSpawn: 0
     moneyGain: 5
-  - torcherSpawn: 2
-    throwerSpawn: 4
+  - torcherSpawn: 0
+    throwerSpawn: 2
     bomberSpawn: 0
     moneyGain: 6
   - torcherSpawn: 2
-    throwerSpawn: 4
+    throwerSpawn: 2
     bomberSpawn: 0
     moneyGain: 7
-  - torcherSpawn: 2
-    throwerSpawn: 4
+  - torcherSpawn: 3
+    throwerSpawn: 3
     bomberSpawn: 0
     moneyGain: 8
-  - torcherSpawn: 2
-    throwerSpawn: 4
+  - torcherSpawn: 5
+    throwerSpawn: 5
     bomberSpawn: 0
     moneyGain: 9
   SpawnPoint: {fileID: 0}

@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour
     [Header("Enemy")]
     public Torcher torcher;
     public Thrower thrower;
-    private float baseInterval = 0.2f;
+    [SerializeField] private float baseInterval = 0.2f;
     private int totalSpawned;
     private void Awake()
     {
@@ -68,16 +68,21 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("Enemy Begin Spawning");
         LevelData currentLevelData = levelDatas[GameplayManager.instance.currentNight];
         Debug.Log($"Torcher: {currentLevelData.torcherSpawn} -- Thrower: {currentLevelData.throwerSpawn} -- Bomber: {currentLevelData.bomberSpawn}");
-        for(int i = 0; i < currentLevelData.torcherSpawn; i++)
+        Vector3 startPos = SpawnPoint.transform.position;
+
+        Vector3 effectPos = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), 0);
+        for (int i = 0; i < currentLevelData.torcherSpawn; i++)
         {
-            Torcher newTorcher = Instantiate(torcher, SpawnPoint.transform.position, Quaternion.identity);
+            effectPos = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), 0);
+            Torcher newTorcher = Instantiate(torcher, startPos + effectPos, Quaternion.identity);
             enemySpawned["torcher"]++;
             totalSpawned++;
             yield return new WaitForSeconds(baseInterval);
         }
         for (int i = 0; i < currentLevelData.throwerSpawn; i++)
         {
-            Thrower newTorcher = Instantiate(thrower, transform.position, Quaternion.identity);
+            effectPos = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), 0);
+            Thrower newTorcher = Instantiate(thrower, startPos + effectPos, Quaternion.identity);
             enemySpawned["thrower"]++;
             totalSpawned++;
             yield return new WaitForSeconds(baseInterval);

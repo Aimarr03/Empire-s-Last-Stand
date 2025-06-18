@@ -275,14 +275,18 @@ MonoBehaviour:
   currentHP: 40
   maxHP: 40
   currentTarget: {fileID: 0}
+  spriteRenderer: {fileID: 2320185593107578559}
   attackRange: 0.5
   damage: 5
   attackCooldown: 1.5
   level: 1
+  collideArea: {fileID: 359101213113406641}
   triggerArea: {fileID: 2756924465931713408}
   StartPosition: {x: 0, y: 0, z: 0}
   canvas: {fileID: 9064803045079148543}
   hpBar: {fileID: 2836734354641768885}
+  commanded: 0
+  Target: {x: 0, y: 0, z: 0}
 --- !u!1 &6173650922862819995
 GameObject:
   m_ObjectHideFlags: 0

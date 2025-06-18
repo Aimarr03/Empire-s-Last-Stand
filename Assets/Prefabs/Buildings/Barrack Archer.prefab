@@ -6053,8 +6053,8 @@ MonoBehaviour:
   UI_Canva: {fileID: 7203264047221563945}
   backgroundHpBar: {fileID: 5948245049861814668}
   hpBar: {fileID: 1741215145675113704}
-  ui_detail: {fileID: 0}
   Light: {fileID: 8746010481716384366}
+  levelText: {fileID: 3482888263608197588}
   troopType: Archer
   troopPrefab: {fileID: 2786203712698069544, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
   spawnPoint: {fileID: 8458304668354905715}
