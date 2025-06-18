@@ -35,6 +35,7 @@ public class GameplayManager : MonoBehaviour
     private int currentMoney;
 
     public event Action ChangeState;
+    public string resultStatus {private set; get; }
     private void Awake()
     {
         if (instance == null)
@@ -115,6 +116,13 @@ public class GameplayManager : MonoBehaviour
         ChangeState?.Invoke();
         //TestChange();
     }
+    private async void DelayFight()
+    {
+        await Task.Delay(1500);
+        gameState = GameState.Night;
+        visualManager.ChangeToNight();
+        ChangeState?.Invoke();
+    }
     public async void TestChange()
     {
         await Task.Delay(2500);
@@ -125,7 +133,18 @@ public class GameplayManager : MonoBehaviour
         gameState = GameState.Morning;
         currentNight++;
         visualManager.ChangeToDay();
+        
+    }
+    public void UpdateBattleEnded()
+    {
         ChangeState?.Invoke();
+    }
+    public void LoseTheGame()
+    {
+        pause = true;
+        gameState = GameState.Over;
+        resultStatus = "lose";
+        visualManager.DisplayDefeat();
     }
 
     public bool CheckMoney(int cost) => currentMoney >= cost;
@@ -153,5 +172,6 @@ public class GameplayManager : MonoBehaviour
 public enum GameState
 {
     Morning,
-    Night
+    Night,
+    Over
 }

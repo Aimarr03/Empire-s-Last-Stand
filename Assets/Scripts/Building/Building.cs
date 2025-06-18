@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Threading.Tasks;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -32,6 +33,7 @@ namespace Game.Buildings
 
         protected SpriteRenderer spriteRenderer;
         protected Collider2D Collider;
+        protected ParticleSystem ExplodeParticle;
         public BuildingState currentState;
 
         public event Action<Building> OnDestroyed;
@@ -45,6 +47,7 @@ namespace Game.Buildings
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            ExplodeParticle = GetComponentInChildren<ParticleSystem>();
             Collider = GetComponent<Collider2D>();
             Light.intensity = 0;
             UI_Canva.gameObject.SetActive(false);
@@ -134,6 +137,13 @@ namespace Game.Buildings
             Debug.Log($"{gameObject.name} took {damage} damage, HP left: {currentHP} | percentage: {((float)currentHP)/maxHP}");
             backgroundHpBar.gameObject.SetActive(true);
             hpBar.fillAmount = ((float)currentHP) / maxHP;
+            transform.DOScaleX(1.2f, 0.1f).OnComplete(() => transform.DOScaleX(1, 0.1f));
+            transform.DOScaleY(0.7f, 0.1f).OnComplete(() => transform.DOScaleY(1, 0.1f));
+            spriteRenderer.DOColor(Color.red, 0f).OnComplete(async () =>
+            {
+                await Task.Delay(100);
+                spriteRenderer.DOColor(Color.white, 0f);
+            });
             if (currentHP <= 0)
             {
                 Destroyed();
@@ -143,6 +153,7 @@ namespace Game.Buildings
         protected virtual void Destroyed()
         {
             currentState = BuildingState.Destructed;
+            ExplodeParticle.Play();
             SetDestroyedSprite();
             Debug.Log($"{gameObject.name} destroyed.");
             UI_Canva.gameObject.SetActive(false);

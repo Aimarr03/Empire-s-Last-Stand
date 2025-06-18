@@ -8,6 +8,13 @@ namespace Game.Buildings
     {
         public static event System.Action OnGameOver;
 
+        protected override void Destroyed()
+        {
+            base.Destroyed();
+            GameplayManager.instance.LoseTheGame();
+        }
+
+
         protected override void Start()
         {
             base.Start();
@@ -16,6 +23,7 @@ namespace Game.Buildings
             currentState = BuildingState.Constructed;
             SetReadySprite();
             UI_Canva.gameObject.SetActive(true);
+            currentHP = maxHP;
             //StartCoroutine(ConstructionDelay());
         }
 

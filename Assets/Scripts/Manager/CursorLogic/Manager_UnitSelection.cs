@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Game.Buildings;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,6 +56,9 @@ public class Manager_UnitSelection : MonoBehaviour
         else
         {
             selectedBuildingUI.gameObject.SetActive(true);
+            selectedBuildingUI.transform.localScale = new Vector3(0.7f,0.7f,0.7f);
+            selectedBuildingUI.transform.DOScale(1, 0.25f).SetEase(Ease.OutBack);
+
             Vector3 buildingPos = _selectedBuilding.transform.position;
             //Debug.Log("Building Pos in World: " + buildingPos);
 

@@ -210,7 +210,7 @@ MonoBehaviour:
   hp: 30
   maxHp: 30
   currentTarget: {fileID: 0}
-  attackRange: 0.5
+  attackRange: 1
   attackCooldown: 2
   damage: 5
   dead: 0

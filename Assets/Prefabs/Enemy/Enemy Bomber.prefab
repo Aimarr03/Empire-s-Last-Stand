@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7045513565480697096}
   - component: {fileID: 8873062885252307439}
   - component: {fileID: 1721942308898328617}
+  - component: {fileID: 3308284983407196906}
   m_Layer: 0
   m_Name: Enemy Bomber
   m_TagString: Enemy
@@ -189,3 +190,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3308284983407196906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942856913670688371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3792026fe4ee2240b571633a2541ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: bomber
+  moveSpeed: 2
+  hp: 30
+  maxHp: 30
+  currentTarget: {fileID: 0}
+  attackRange: 0.5
+  attackCooldown: 1.5
+  damage: 5
+  dead: 0
+  canvas: {fileID: 0}
+  hpBar: {fileID: 0}
+  explodingTime: 3
