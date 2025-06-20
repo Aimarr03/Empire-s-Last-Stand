@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Bomb : BaseBullet
 {
+    [SerializeField] AudioClip explosion;
     [SerializeField] ParticleSystem explodeEffect;
     /*protected override void OnCollisionEnter2D(Collider2D collided)
     {
@@ -32,6 +33,7 @@ public class Bomb : BaseBullet
     }
     private void OnHit()
     {
+        AudioManager.instance.PlaySFX(explosion, 0.22f);
         explodeEffect.gameObject.SetActive(true);
         explodeEffect.Play();
         explodeEffect.transform.parent = null;

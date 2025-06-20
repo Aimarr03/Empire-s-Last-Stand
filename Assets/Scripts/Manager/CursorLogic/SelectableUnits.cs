@@ -10,6 +10,7 @@ public class SelectableUnits : MonoBehaviour
     private void OnDestroy()
     {
         if (Manager_UnitSelection.Instance == null) return;
+        Manager_UnitSelection.Instance.Deselect(gameObject);
         Manager_UnitSelection.Instance.AllUnits.Remove(gameObject);
     }
 }

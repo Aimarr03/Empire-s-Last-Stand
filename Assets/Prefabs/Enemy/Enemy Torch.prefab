@@ -60,10 +60,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!195 &1452178485277302642
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672254258030753031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -216,6 +216,10 @@ MonoBehaviour:
   dead: 0
   canvas: {fileID: 1159930038210422451}
   hpBar: {fileID: 3817465086600150149}
+  audio_spawn: {fileID: 8300000, guid: 805ded1ba875d344b9fd02101bf5195f, type: 3}
+  audio_attacking: {fileID: 8300000, guid: f212a6be324ed094690889a2ee02f8ec, type: 3}
+  audio_die: {fileID: 8300000, guid: ae86b36a9631c234e989d2a53a65f403, type: 3}
+  audio_torchAttack: {fileID: 8300000, guid: f3a8ac31d84203d4fb5a92141fbc52aa, type: 3}
 --- !u!1 &2206275096702918438
 GameObject:
   m_ObjectHideFlags: 0

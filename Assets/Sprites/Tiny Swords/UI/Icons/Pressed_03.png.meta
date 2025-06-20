@@ -171,37 +171,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pressed_03_0
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 29
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89cdcfb3b9022b0f0800000000000000
-      internalID: -1102783107653903208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Pressed_03_1
       rect:
         serializedVersion: 2
-        x: 22
+        x: 16
         y: 21
-        width: 16
+        width: 22
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,33 +192,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Pressed_03_2
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 29
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f412d1982ae23a260800000000000000
-      internalID: 7107575912540741967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 13834e024a1fdce499ac3a40dab43e55
     internalID: 0
     vertices: []
     indices: 

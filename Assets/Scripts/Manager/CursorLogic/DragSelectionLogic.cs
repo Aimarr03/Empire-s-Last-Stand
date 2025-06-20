@@ -37,6 +37,11 @@ public class DragSelectionLogic : MonoBehaviour
             endPos = Vector2.zero;
             
             DrawVisual();
+            selectionBox.xMin = startPos.x;
+            selectionBox.xMax = startPos.x;
+            
+            selectionBox.yMin= startPos.y;
+            selectionBox.yMax = startPos.y;
         }
     }
     void DrawVisual()

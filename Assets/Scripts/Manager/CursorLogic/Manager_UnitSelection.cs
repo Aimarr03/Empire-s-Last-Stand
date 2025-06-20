@@ -35,6 +35,7 @@ public class Manager_UnitSelection : MonoBehaviour
         DeselectAll();
         Debug.Log("Selection - Select Unit " + unitToAdd.name);
         SelectedUnits.Add(unitToAdd);
+        unitToAdd.GetComponent<UnitController>().selection.gameObject.SetActive(true);
     }
     public void SelectBuilding(GameObject building)
     {
@@ -88,20 +89,21 @@ public class Manager_UnitSelection : MonoBehaviour
         float row = 0;
         float column = 0;
         int index = 0;
+        AudioManager.instance.PlayClick();
         foreach (var unit in SelectedUnits)
         {
             UnitController unitController = unit.GetComponent<UnitController>();
             Vector2 targetPos = new Vector2(pos.x + column, pos.y + row);
-            unitController.CommandTroop(pos);
+            unitController.CommandTroop(targetPos);
             index++;
             if (index % 4 == 0)
             {
-                row += 0.65f;
+                row += 1.1f;
                 column = 0;
             }
             else
             {
-                column += 0.65f;
+                column += 1.1f;
             }
         }
     }
@@ -113,6 +115,7 @@ public class Manager_UnitSelection : MonoBehaviour
         {
             Debug.Log("Selection - Add New Unit " + unitToAdd.name);
             SelectedUnits.Add(unitToAdd);
+            unitToAdd.GetComponent<UnitController>().selection.gameObject.SetActive(true);
         }
         else
         {
@@ -127,18 +130,32 @@ public class Manager_UnitSelection : MonoBehaviour
         {
             Debug.Log("Selection - Add New Unit " + unitToAdd.name);
             SelectedUnits.Add(unitToAdd);
+            unitToAdd.GetComponent<UnitController>().selection.gameObject.SetActive(true);
         }
     }
     public void DeselectAll()
     {
         Debug.Log("Selection - Remove All Unit ");
         _selectedBuilding = null;
+        for (int i = 0; i < SelectedUnits.Count; i++)
+        {
+            GameObject unit = SelectedUnits[i];
+            if(unit != null) unit.GetComponent<UnitController>().selection.gameObject.SetActive(false);
+        }
+        /*foreach (GameObject unitToRemove in SelectedUnits)
+        {
+            unitToRemove.GetComponent<UnitController>().selection.gameObject.SetActive(false);
+        }*/
         SelectedUnits.Clear();
         HandleUI();
     }
-    public void Deselect(GameObject unitToAdd)
+    public void Deselect(GameObject unitToRemove)
     {
-        Debug.Log("Selection - Remove Unit " + unitToAdd.name);
-        SelectedUnits.Remove(unitToAdd);
+        Debug.Log("Selection - Remove Unit " + unitToRemove.name);
+        if(unitToRemove.TryGetComponent(out UnitController unit))
+        {
+            unit.selection.gameObject.SetActive(false);
+        }
+        SelectedUnits.Remove(unitToRemove);
     }
 }

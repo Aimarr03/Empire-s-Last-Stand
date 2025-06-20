@@ -2,7 +2,9 @@ using DG.Tweening;
 using System;
 using System.Threading.Tasks;
 using TMPro;
+#if UNITY_EDITOR
 using TMPro.EditorUtilities;
+#endif
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -45,6 +47,9 @@ namespace Game.Buildings
         [SerializeField] protected Image hpBar;
         [SerializeField] protected Light2D Light;
         [SerializeField] protected TextMeshProUGUI levelText;
+        [Header("Audio")]
+        [SerializeField] protected AudioClip build;
+        [SerializeField] protected AudioClip destroyed;
         protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -76,6 +81,11 @@ namespace Game.Buildings
                        x => Light.intensity = x,
                        0f, 1.5f);
                     backgroundHpBar.gameObject.SetActive(false);
+                    if(buildingName != "townhall" && currentState == BuildingState.Destructed)
+                    {
+                        currentState = BuildingState.Constructed;
+                        SetReadySprite();
+                    }
                 }
                 else
                 {
@@ -121,9 +131,10 @@ namespace Game.Buildings
                 Vector3 posBuffer = transform.position;
                 Vector3 effectBuffer = posBuffer + new Vector3(0, 1, 0);
                 transform.position = effectBuffer;
-                transform.DOMove(posBuffer, 0.65f).SetEase(Ease.OutBounce);
-                transform.DOScaleX(1.2f, 0.17f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleX(1, 0.5f).SetEase(Ease.OutBounce));
-                transform.DOScaleY(0.7f, 0.17f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleY(1, 0.5f).SetEase(Ease.OutBounce));
+                transform.DOMove(posBuffer, 0.75f).SetEase(Ease.OutBack);
+                transform.DOScaleX(1.2f, 0.22f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleX(1, 0.55f).SetEase(Ease.OutBounce));
+                transform.DOScaleY(0.7f, 0.22f).SetEase(Ease.OutBounce).OnComplete(() => transform.DOScaleY(1, 0.55f).SetEase(Ease.OutBounce));
+                AudioManager.instance.PlaySFX(build);
             }
         }
 
@@ -165,6 +176,7 @@ namespace Game.Buildings
         {
             if(currentState == BuildingState.Destructed) return;
             currentState = BuildingState.Destructed;
+            AudioManager.instance.PlaySFX(destroyed);
             ExplodeParticle.Play();
             SetDestroyedSprite();
             Collider.enabled = false;

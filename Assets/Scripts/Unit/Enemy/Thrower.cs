@@ -3,6 +3,7 @@ using UnityEngine;
 public class Thrower : EnemyController
 {
     public Bomb bombObject;
+    [SerializeField] private AudioClip fireBomb;
 
     public void CreateBomb()
     {
@@ -20,5 +21,6 @@ public class Thrower : EnemyController
         Bomb bomb = Instantiate(bombObject, transform.position, Quaternion.identity);
         bomb.direction = aimDirection;
         bomb.damage = damage;
+        AudioManager.instance.PlaySFXWithRandomPitch(fireBomb);
     }
 }

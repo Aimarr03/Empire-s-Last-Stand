@@ -28,6 +28,12 @@ public class VisualManager : MonoBehaviour
     [SerializeField] private CanvasGroup losePanel;
     [Header("Panel Game Result Win")]
     [SerializeField] private CanvasGroup winPanel;
+    [Header("Audio")]
+    [SerializeField] AudioClip defendSFX;
+    [SerializeField] AudioClip ToMorningSFX;
+    [SerializeField] AudioClip ToNightSFX;
+    [SerializeField] AudioClip LoseSFX;
+    [SerializeField] AudioClip WinSFX;
     public void Awake()
     {
         backgroundDetail.gameObject.SetActive(false);
@@ -45,9 +51,16 @@ public class VisualManager : MonoBehaviour
             bufferIntensity = vignette.intensity.value;
             vignette.intensity.value = 0;
         }
+        loadPanel.gameObject.SetActive(true);
+        loadPanel.alpha = 1.0f;
+        loadPanel.DOFade(0, 1f).SetDelay(1f).OnComplete(() =>
+        {
+            loadPanel.gameObject.SetActive(false);
+        });
     }
     public void ChangeToNight()
     {
+        //AudioManager.instance.PlaySFX(defendSFX);
         backgroundDetail.gameObject.SetActive(false);
         currentNight.gameObject.SetActive(false);
         currentNight.text = $"Night <size=200%>{GameplayManager.instance.currentNight + 1}</size>";
@@ -67,6 +80,7 @@ public class VisualManager : MonoBehaviour
                 bufferIntensity,                                     // Target value
                 1f                                        // Duration
             );
+            AudioManager.instance.PlaySFX(ToNightSFX);
             await Task.Delay(600);
             backgroundDetail.DOFade(0, 0.6f);
         });
@@ -93,6 +107,7 @@ public class VisualManager : MonoBehaviour
     }
     public void ChangeToDay()
     {
+        AudioManager.instance.PlaySFX(ToMorningSFX);
         DOTween.To(
                 () => vignette.intensity.value,          // Getter
                 x => vignette.intensity.value = x,       // Setter
@@ -113,6 +128,8 @@ public class VisualManager : MonoBehaviour
     }
     public void GoToMainMenu()
     {
+        AudioManager.instance.StopMusic();
+        AudioManager.instance.PlayClick();
         loadPanel.alpha = 0;
         loadPanel.gameObject.SetActive(true);
         loadPanel.DOFade(1, 0.6f).OnComplete(async() =>
@@ -123,6 +140,8 @@ public class VisualManager : MonoBehaviour
     }
     public void Restart()
     {
+        AudioManager.instance.StopMusic();
+        AudioManager.instance.PlayClick();
         loadPanel.alpha = 0;
         loadPanel.gameObject.SetActive(true);
         loadPanel.DOFade(1, 0.6f).OnComplete(async () =>
@@ -133,6 +152,8 @@ public class VisualManager : MonoBehaviour
     }
     public void DisplayPause(bool value)
     {
+        if(value) AudioManager.instance.PlayClick();
+        else AudioManager.instance.PlayCancel();
         pausePanel.gameObject.SetActive(value);
     }
     public async void DisplayDefeat()
@@ -145,14 +166,15 @@ public class VisualManager : MonoBehaviour
         DisplayResult.gameObject.SetActive(true);
         DisplayText.text = "DEFEAT";
         DisplayText.color = Color.red;
-        await Task.Delay(600);
+        await Task.Delay(1200);
         
         Debug.Log("Displaying Result panel");
-        await DisplayResult.DOFade(1, 0.5f).AsyncWaitForCompletion();
-        await Task.Delay(1000);
+        AudioManager.instance.PlayMusicWithSmoothTrans(LoseSFX);
+        await DisplayResult.DOFade(1, 1f).AsyncWaitForCompletion();
+        await Task.Delay(2200);
         
         await DisplayResult.DOFade(0, 1.5f).AsyncWaitForCompletion();
-        await Task.Delay(500);
+        await Task.Delay(1500);
 
         Debug.Log("Displaying lose panel");
         losePanel.transform.localScale = Vector3.one * 0.7f;
@@ -172,14 +194,15 @@ public class VisualManager : MonoBehaviour
         DisplayResult.gameObject.SetActive(true);
         DisplayText.text = "VICTORY";
         DisplayText.color = Color.red;
-        await Task.Delay(600);
+        await Task.Delay(1200);
+        AudioManager.instance.PlayMusicWithSmoothTrans(WinSFX);
 
         Debug.Log("Displaying Result panel");
-        await DisplayResult.DOFade(1, 0.5f).AsyncWaitForCompletion();
-        await Task.Delay(1000);
+        await DisplayResult.DOFade(1, 1.5f).AsyncWaitForCompletion();
+        await Task.Delay(2200);
 
-        await DisplayResult.DOFade(0, 1.5f).AsyncWaitForCompletion();
-        await Task.Delay(500);
+        await DisplayResult.DOFade(0, 2.5f).AsyncWaitForCompletion();
+        await Task.Delay(1500);
 
         Debug.Log("Displaying lose panel");
         winPanel.transform.localScale = Vector3.one * 0.7f;

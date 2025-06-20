@@ -46,7 +46,7 @@ namespace Game.Buildings
         {
             base.Start();
             UnitController.OnKilled += UnitController_OnKilled;
-            SetConstructionSprite();   
+            SetConstructionSprite();
         }
         private void OnDestroy()
         {
@@ -65,6 +65,26 @@ namespace Game.Buildings
             if (GameplayManager.instance.gameState == GameState.Morning)
             {
                 backgroundProgressDeploy.gameObject.SetActive(false);
+                Vector2 spawnPos = transform.position;
+                spawnPos.x += 2.5f;
+                spawnPos.y += 1.5f;
+                
+                float bufferPosX = spawnPos.x;
+                
+                for (int i = 0; i < unitsDeployed.Count; i++)
+                {
+                    UnitController unit = unitsDeployed[i];
+                    unit.currentHP = maxHP;
+
+                    unit.CommandTroop(spawnPos);
+
+                    spawnPos.x += 1;
+                    if (troopSpawned % 4 == 0)
+                    {
+                        spawnPos.x = bufferPosX;
+                        spawnPos.y += 1;
+                    }
+                }
             }
             else
             {
@@ -111,7 +131,33 @@ namespace Game.Buildings
         {
             base.SetReadySprite();
         }
+        void SetupTroops()
+        {
+            troopSpawned = 0;
+            for(int i = 0; i < unitsDeployed.Count; i++)
+            {
+                UnitController troop = unitsDeployed[i];
+                Destroy(troop.gameObject);
+            }
+            unitsDeployed.Clear();
+            Vector2 spawnPos = transform.position;
+            spawnPos.x += 2.5f;
+            spawnPos.y += 1.5f;
+            float bufferPosX = spawnPos.x;
+            for(int i = 0; i < GetCurrentStats().maxUnits; i++)
+            {
+                UnitController newUnit = Instantiate(troopPrefab, spawnPos, Quaternion.identity);
+                unitsDeployed.Add(newUnit);
+                troopSpawned++;
 
+                spawnPos.x += 1;
+                if(troopSpawned % 4 == 0)
+                {
+                    spawnPos.x = bufferPosX;
+                    spawnPos.y += 1;
+                }
+            }
+        }
         void SpawnTroop()
         {
             if (troopSpawned >= GetCurrentStats().maxUnits)
@@ -138,6 +184,8 @@ namespace Game.Buildings
         private void Update()
         {
             if (currentHP == 0) return;
+            if (GameplayManager.instance.gameState == GameState.Over) return;
+            if (GameplayManager.instance.pause) return;
             if (GameplayManager.instance.gameState != GameState.Night || currentLevel == 0) return;
 
             if(troopSpawned >= GetCurrentStats().maxUnits) return;
@@ -156,11 +204,13 @@ namespace Game.Buildings
         {
             base.Upgrade();
             UpdateDataBuilding();
+            SetupTroops();
         }
         public override void Build()
         {
             base.Build();
             UpdateDataBuilding();
+            SetupTroops();
         }
         private void UpdateDataBuilding()
         {

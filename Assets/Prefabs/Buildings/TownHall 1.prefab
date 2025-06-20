@@ -332,6 +332,8 @@ MonoBehaviour:
   hpBar: {fileID: 6982179508193534733}
   Light: {fileID: 8442452273994505183}
   levelText: {fileID: 291239364347192097}
+  build: {fileID: 8300000, guid: 9abfa441189e42648a199ab30650728d, type: 3}
+  destroyed: {fileID: 8300000, guid: d26946ea62784b4438a91b3b92dbd74f, type: 3}
 --- !u!61 &4714079709031058658
 BoxCollider2D:
   m_ObjectHideFlags: 0

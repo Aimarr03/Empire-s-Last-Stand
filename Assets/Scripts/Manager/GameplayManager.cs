@@ -37,18 +37,21 @@ public class GameplayManager : MonoBehaviour
 
     public event Action ChangeState;
     public string resultStatus {private set; get; }
+    [SerializeField] AudioClip useMoney;
+    [SerializeField] AudioClip gainMoney;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            currentNight = 4;
-            GainMoney(20);
+            currentNight = 0;
+            GainMoney(8);
         }
         else
         {
             Destroy(gameObject);
         }
+        AudioManager.instance.PlayMusicWithSmoothTrans("day");
         Bounds boundary = boundaryCamera.bounds;
         Debug.Log(boundary.min);
         Debug.Log(boundary.max);
@@ -115,6 +118,7 @@ public class GameplayManager : MonoBehaviour
         Debug.Log("Action - Enemy Incoming - Wave: " + currentNight);
         gameState = GameState.Night;
         visualManager.ChangeToNight();
+        AudioManager.instance.PlayMusicWithSmoothTrans("night");
         ChangeState?.Invoke();
         //TestChange();
     }
@@ -133,6 +137,7 @@ public class GameplayManager : MonoBehaviour
     public void BattleEnded()
     {
         gameState = GameState.Morning;
+        AudioManager.instance.PlayMusicWithSmoothTrans("day");
         currentNight++;
         if(currentNight == 5)
         {
@@ -165,6 +170,7 @@ public class GameplayManager : MonoBehaviour
             currentMoney -= cost;
             ui_gameplay.UpdateGoldText(currentMoney);
             Debug.Log($"Economy - Money Spent: {cost} - Remaining: {currentMoney}");
+            AudioManager.instance.PlaySFX(useMoney);
         }
         else
         {
@@ -180,6 +186,7 @@ public class GameplayManager : MonoBehaviour
     public void Pause()
     {
         pause = !pause;
+        Time.timeScale = pause ? 0 : 1;
         visualManager.DisplayPause(pause);
     }
     public void LoadScene(int scene)

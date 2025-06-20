@@ -1,7 +1,10 @@
 using Game.Buildings;
 using System;
+#if UNITY_EDITOR
 using UnityEditor.Tilemaps;
+#endif
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 public class UnitController : MonoBehaviour
 {
@@ -24,15 +27,21 @@ public class UnitController : MonoBehaviour
     [Header("UI")]
     [SerializeField] protected Canvas canvas;
     [SerializeField] protected Image hpBar;
+    public SpriteRenderer selection;
     private Barrack currentBarrack;
 
     public bool commanded = false;
     public Vector3 Target = Vector3.zero;
     public static event Action<UnitController> OnKilled;
+    private SpawnManager spawnManager;
+    private NavMeshAgent navMeshAgent;
+    bool isDone = false;
     public void CommandTroop(Vector3 pos)
     {
         commanded = true;
         Target = pos;
+        navMeshAgent.SetDestination(Target);
+        //navMeshAgent.isStopped = false;
     }
     public void SetupTroop(UnitStats stats, Vector3 startPos)
     {
@@ -41,7 +50,6 @@ public class UnitController : MonoBehaviour
         damage = stats.damage;
         attackRange = stats.attackRange;
         attackCooldown = stats.attackCooldown;
-
         StartPosition = startPos;
     }
     public bool GetDeadStatus() => isDead;
@@ -49,6 +57,12 @@ public class UnitController : MonoBehaviour
     private void Awake()
     {
         //spriteRenderer = GetComponent<SpriteRenderer>();
+        spawnManager = FindFirstObjectByType<SpawnManager>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateUpAxis = false;
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.speed = moveSpeed;
+        transform.rotation = Quaternion.identity;
         triggerArea.enabled = GameplayManager.instance.gameState == GameState.Night;
     }
     void Start()
@@ -56,6 +70,10 @@ public class UnitController : MonoBehaviour
         animator = GetComponent<Animator>();
         GameplayManager.instance.ChangeState += Instance_ChangeState;
         canvas.gameObject.SetActive(false);
+        if (GameplayManager.instance.gameState == GameState.Night)
+        {
+            currentTarget = FindNearestEnemy();
+        }
         // currentTarget = FindNearestEnemy();
         
     }
@@ -68,7 +86,7 @@ public class UnitController : MonoBehaviour
         bool isNight = GameplayManager.instance.gameState == GameState.Night;
         triggerArea.enabled = isNight;
         canvas.gameObject.SetActive(false);
-
+        isDone = GameplayManager.instance.gameState == GameState.Morning;
     }
 
     void Update()
@@ -78,6 +96,7 @@ public class UnitController : MonoBehaviour
         //     currentTarget = FindNearestEnemy();
         //     if (currentTarget == null) return;
         // }
+        if (GameplayManager.instance.gameState == GameState.Over) return;
         if (GameplayManager.instance.pause) return;
         if (isDead)
         {
@@ -85,19 +104,22 @@ public class UnitController : MonoBehaviour
         }
         if (commanded)
         {
+            animator.SetBool("Moving", true);
             transform.position = Vector2.MoveTowards(transform.position, Target, moveSpeed * Time.deltaTime);
             if ((Target.x > transform.position.x && facingDirection == -1) ||
                     (Target.x < transform.position.x && facingDirection == 1))
             {
                 Flip();
             }
-            if (Vector2.Distance(transform.position, Target) < 2)
+            if (Vector2.Distance(transform.position, Target) < 1)
             {
+                navMeshAgent.isStopped = true;   
+                animator.SetBool("Moving", false);
                 commanded = false;
-            }
+            }    
             return;
         }
-
+        if (isDone) return;
         if (currentTarget != null)
         {
             float distance = Vector2.Distance(transform.position, currentTarget.position);
@@ -120,7 +142,13 @@ public class UnitController : MonoBehaviour
         }
         else
         {
-
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, 6f, Vector2.zero);
+            //Debug.Log("ENEMY HIT: " + hit.collider.gameObject);
+            if(hit.collider.TryGetComponent(out EnemyController enemy))
+            {
+                Debug.Log("New Target Enemy = " + enemy.gameObject.name);
+                currentTarget = enemy.transform;
+            }
         }
 
     }
@@ -131,6 +159,20 @@ public class UnitController : MonoBehaviour
         {
             lastAttackTime = Time.time;
             animator.SetTrigger("Attack");
+            if(currentTarget != null)
+            {
+                if (currentTarget.GetComponent<EnemyController>().dead)
+                {
+                    Transform enemy = FindNearestEnemy();
+                    if(enemy == null)
+                    {
+                        Debug.Log("Done");
+                        isDone = true;
+                        return;
+                    }
+                    currentTarget = enemy;
+                }
+            }
         }
     }
     public void DamageTarget()
@@ -169,6 +211,7 @@ public class UnitController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (currentTarget != null) return;
         if (other.CompareTag("Enemy"))
         {
             currentTarget = other.transform;
@@ -177,6 +220,7 @@ public class UnitController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        if (currentTarget != null) return;
         if (other.CompareTag("Enemy") && currentTarget == other.transform)
         {
             currentTarget = null;

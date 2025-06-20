@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+#if UNITY_EDITOR
 using static UnityEditor.Experimental.GraphView.GraphView;
-
+#endif
 public class ClickSelectionLogic : MonoBehaviour
 {
     public LayerMask clickableLayer;
@@ -28,14 +29,16 @@ public class ClickSelectionLogic : MonoBehaviour
                 return;
             }
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero, Mathf.Infinity, clickableLayer);
-            //Debug.Log("Collider " + hit.collider);
+            Debug.Log("Hit Collider: " + hit.collider);
             if (hit.collider != null)
             {
                 GameObject hitObject = hit.collider.gameObject;
                 HandleTypeOfSelectableUnit(hitObject);
+                AudioManager.instance.PlayClick();
             }
             else
             {
+                AudioManager.instance.PlayCancel();
                 Manager_UnitSelection.Instance.DeselectAll();
             }
         }
@@ -47,6 +50,7 @@ public class ClickSelectionLogic : MonoBehaviour
                 Debug.Log("On a UI");
                 return;
             }
+            AudioManager.instance.PlayClick();
             Manager_UnitSelection.Instance.CommandTroops(worldPoint);
         }
     }

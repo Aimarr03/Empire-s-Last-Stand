@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4442912480684936783}
   - component: {fileID: 32319772346502059}
   - component: {fileID: 3607313174190320300}
+  - component: {fileID: 4809740323090022402}
   m_Layer: 7
   m_Name: Enemy Thrower
   m_TagString: Enemy
@@ -114,12 +115,11 @@ Transform:
   m_GameObject: {fileID: 1128633935925198017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.431, y: -3.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7946945296408548565}
-  - {fileID: 5839825609472850998}
   - {fileID: 5433579784254066423}
   - {fileID: 4274478873121840925}
   m_Father: {fileID: 0}
@@ -144,10 +144,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -196,7 +196,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!195 &4442912480684936783
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128633935925198017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -264,61 +264,18 @@ MonoBehaviour:
   dead: 0
   canvas: {fileID: 4975130005338296650}
   hpBar: {fileID: 2101941855020568545}
+  audio_spawn: {fileID: 8300000, guid: 805ded1ba875d344b9fd02101bf5195f, type: 3}
+  audio_attacking: {fileID: 8300000, guid: f212a6be324ed094690889a2ee02f8ec, type: 3}
+  audio_die: {fileID: 8300000, guid: ae86b36a9631c234e989d2a53a65f403, type: 3}
   bombObject: {fileID: 2917997986778934339, guid: b576bc087fc08274d95bbf9e6dd810b3, type: 3}
---- !u!1 &2276997026732202716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5839825609472850998}
-  - component: {fileID: 2969089908925973706}
-  - component: {fileID: 534432934497061179}
-  - component: {fileID: 2415275865527624680}
-  m_Layer: 7
-  m_Name: Detecting Area
-  m_TagString: Agro Area
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5839825609472850998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276997026732202716}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1907590461551479149}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2969089908925973706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276997026732202716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ee63de775a9394f8bc594b5a991a97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tag: Unit
---- !u!58 &534432934497061179
+  fireBomb: {fileID: 8300000, guid: 51845f88a381a374cbf65ff7c3308f78, type: 3}
+--- !u!58 &4809740323090022402
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276997026732202716}
+  m_GameObject: {fileID: 1128633935925198017}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -347,34 +304,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.19
---- !u!50 &2415275865527624680
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276997026732202716}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Radius: 2.43
 --- !u!1 &3241835955804634383
 GameObject:
   m_ObjectHideFlags: 0

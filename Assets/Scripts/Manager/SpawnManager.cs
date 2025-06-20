@@ -14,6 +14,7 @@ public struct LevelData
 public class SpawnManager : MonoBehaviour
 {
     public List<LevelData> levelDatas = new List<LevelData>();
+    List<EnemyController> listOfEnemy = new List<EnemyController>();
     public Dictionary<string, int> enemySpawned;
     public Transform SpawnPoint;
     [Header("Enemy")]
@@ -28,6 +29,11 @@ public class SpawnManager : MonoBehaviour
         enemySpawned.Add("thrower", 0);
         enemySpawned.Add("bomber", 0);
         totalSpawned = 0;
+    }
+    public EnemyController GiveEnemyData()
+    {
+        if (listOfEnemy.Count > 0) return listOfEnemy[0];
+        else return null;
     }
     void Start()
     {
@@ -51,15 +57,20 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(StartSpawningEnemy());
         }
     }
-    private void EnemyController_EnemyDie(string enemyType)
+    private void EnemyController_EnemyDie(string enemyType, EnemyController enemy)
     {
         enemySpawned[enemyType]--;
         totalSpawned--;
-        if(totalSpawned <= 0)
+        listOfEnemy.Remove(enemy);
+        if (totalSpawned <= 0)
         {
             Debug.Log("We defend the city!");
             GameplayManager.instance.BattleEnded();
-            GameplayManager.instance.GainMoney(levelDatas[GameplayManager.instance.currentNight].moneyGain);
+            if(GameplayManager.instance.currentNight < 5)
+            {
+                GameplayManager.instance.GainMoney(levelDatas[GameplayManager.instance.currentNight].moneyGain);
+            }
+            
         }
     }
     private IEnumerator StartSpawningEnemy()
@@ -76,13 +87,15 @@ public class SpawnManager : MonoBehaviour
             effectPos = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), 0);
             Torcher newTorcher = Instantiate(torcher, startPos + effectPos, Quaternion.identity);
             enemySpawned["torcher"]++;
+            listOfEnemy.Add(newTorcher);
             totalSpawned++;
             yield return new WaitForSeconds(baseInterval);
         }
         for (int i = 0; i < currentLevelData.throwerSpawn; i++)
         {
             effectPos = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), 0);
-            Thrower newTorcher = Instantiate(thrower, startPos + effectPos, Quaternion.identity);
+            Thrower newThrower = Instantiate(thrower, startPos + effectPos, Quaternion.identity);
+            listOfEnemy.Add(newThrower);
             enemySpawned["thrower"]++;
             totalSpawned++;
             yield return new WaitForSeconds(baseInterval);

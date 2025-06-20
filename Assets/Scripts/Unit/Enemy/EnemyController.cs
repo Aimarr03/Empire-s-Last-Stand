@@ -21,10 +21,19 @@ public class EnemyController : MonoBehaviour
     [Header("UI")]
     [SerializeField] protected Canvas canvas;
     [SerializeField] protected Image hpBar;
+
+    [SerializeField] protected AudioClip audio_spawn;
+    [SerializeField] protected AudioClip audio_attacking;
+    [SerializeField] protected AudioClip audio_die;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public static event Action<string> EnemyDie;
+    public static event Action<string, EnemyController> EnemyDie;
     void Start()
     {
+        AudioManager.instance.PlaySFXWithRandomPitch(audio_spawn);
+        attackCooldown -= (float)(attackCooldown * (0.075 * GameplayManager.instance.currentNight));
+        damage += (float)(damage * (0.15 * GameplayManager.instance.currentNight));
+        maxHp += (float) (maxHp * (0.1 * GameplayManager.instance.currentNight));
+        
         hp = maxHp;
         animator = GetComponent<Animator>();
         currentTarget = FindNearestBuilding();
@@ -35,6 +44,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameplayManager.instance.gameState == GameState.Over) return;
+        if (GameplayManager.instance.pause) return;
         if (dead) return;
         if (currentTarget == null || !currentTarget.gameObject.activeInHierarchy)
         {
@@ -71,13 +82,15 @@ public class EnemyController : MonoBehaviour
 
             Debug.Log("Enemy menyerang target!");
             lastAttackTime = Time.time;
-            
+            AudioManager.instance.PlaySFXWithRandomPitch(audio_attacking);
 
             animator.SetTrigger("Attacking");
         }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+
+        if (currentTarget != null && currentTarget.CompareTag("Unit")) return;
         if (other.CompareTag("Unit"))
         {
             currentTarget = other.transform;
@@ -104,10 +117,11 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlaySFXWithRandomPitch(audio_die);
             dead = true;
-            animator.SetBool("Dead", true);
+            animator.SetTrigger("Dead");
             canvas.gameObject.SetActive(false);
-            EnemyDie?.Invoke(enemyType);
+            EnemyDie?.Invoke(enemyType, this);
         }
     }
     public void DoneAttacking()

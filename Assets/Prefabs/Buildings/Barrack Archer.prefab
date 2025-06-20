@@ -6055,17 +6055,19 @@ MonoBehaviour:
   hpBar: {fileID: 1741215145675113704}
   Light: {fileID: 8746010481716384366}
   levelText: {fileID: 3482888263608197588}
+  build: {fileID: 8300000, guid: 9abfa441189e42648a199ab30650728d, type: 3}
+  destroyed: {fileID: 8300000, guid: d26946ea62784b4438a91b3b92dbd74f, type: 3}
   troopType: Archer
   troopPrefab: {fileID: 2786203712698069544, guid: 1054f74cfb245e743b334cab7335f866, type: 3}
   spawnPoint: {fileID: 8458304668354905715}
   baseSpawnInterval: 10
   levelStats:
   - maxHP: 100
-    costToBuild: 4
+    costToBuild: 6
     maxUnits: 4
     spawnInterval: 4
   - maxHP: 130
-    costToBuild: 6
+    costToBuild: 8
     maxUnits: 8
     spawnInterval: 3
   unitStats:

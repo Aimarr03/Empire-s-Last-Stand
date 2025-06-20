@@ -55,6 +55,8 @@ MonoBehaviour:
   boundaryCamera: {fileID: 0}
   cameraMovSpeed: 6
   edgeLimit: 3
+  useMoney: {fileID: 8300000, guid: f7f3a73b70d9e664999ca85422825566, type: 3}
+  gainMoney: {fileID: 0}
 --- !u!114 &2104869198565671758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +93,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 0}
   torcher: {fileID: 1809641447425206772, guid: 87079970bcfa6af40a00111bc8ef5cf6, type: 3}
   thrower: {fileID: 3607313174190320300, guid: d2f754bd087b4254994a8bec65d0f097, type: 3}
+  baseInterval: 0.8
 --- !u!114 &4528474670429443237
 MonoBehaviour:
   m_ObjectHideFlags: 0

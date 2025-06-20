@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class Archer: UnitController
 {
     public Arrow arrowObject;
-
+    [SerializeField] AudioClip arrowClip;
     public void CreateArrow()
     {
         if (currentTarget == null) return;
@@ -20,6 +20,7 @@ public class Archer: UnitController
         
         
         Arrow arrow = Instantiate(arrowObject, transform.position, Quaternion.identity);
+        AudioManager.instance.PlaySFXWithRandomPitch(arrowClip);
         arrow.direction = aimDirection;
         arrow.damage = damage;
     }
