@@ -21,6 +21,7 @@ public class UnitController : MonoBehaviour
     public float attackCooldown = 1.3f;
     public int level = 1;
     protected bool isDead;
+    public float maxDistance = 0.15f;
     [SerializeField] Collider2D collideArea;
     [SerializeField] Collider2D triggerArea;
     [SerializeField] private Vector3 StartPosition;
@@ -42,7 +43,7 @@ public class UnitController : MonoBehaviour
         commanded = true;
         Target = pos;
         navMeshAgent.SetDestination(Target);
-        //navMeshAgent.isStopped = false;
+        navMeshAgent.isStopped = false;
     }
     public void SetupTroop(UnitStats stats, Vector3 startPos)
     {
@@ -107,14 +108,18 @@ public class UnitController : MonoBehaviour
         if (commanded)
         {
             animator.SetBool("Moving", true);
-            transform.position = Vector2.MoveTowards(transform.position, Target, moveSpeed * Time.deltaTime);
             if ((Target.x > transform.position.x && facingDirection == -1) ||
                     (Target.x < transform.position.x && facingDirection == 1))
             {
                 Flip();
             }
-            if (Vector2.Distance(transform.position, Target) < 1)
+            //transform.position = Vector2.MoveTowards(transform.position, Target, moveSpeed * Time.deltaTime);
+            float distance = Vector2.Distance(transform.position, Target);
+            Debug.Log("Distance: " + distance);
+            
+            if (distance < maxDistance)
             {
+                Debug.Log("Reach Destinations");
                 navMeshAgent.isStopped = true;   
                 animator.SetBool("Moving", false);
                 commanded = false;
@@ -122,6 +127,8 @@ public class UnitController : MonoBehaviour
             return;
         }
         if (isDone) return;
+        if (GameplayManager.instance.gameState == GameState.Morning) return;
+        
         if (currentTarget != null)
         {
             float distance = Vector2.Distance(transform.position, currentTarget.position);
@@ -132,12 +139,14 @@ public class UnitController : MonoBehaviour
             }
             if (distance > attackRange)
             {
+                navMeshAgent.isStopped = false;
                 animator.SetBool("Moving", true);
-
-                transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
+                navMeshAgent.SetDestination(currentTarget.position);
+                //transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
             }
             else
             {
+                navMeshAgent.isStopped = true;
                 animator.SetBool("Moving", false);
                 AttackTarget();
             }
@@ -156,6 +165,7 @@ public class UnitController : MonoBehaviour
             {
                 Debug.Log("New Target Enemy = " + enemy.gameObject.name);
                 currentTarget = enemy.transform;
+                navMeshAgent.SetDestination(enemy.transform.position);
             }
         }
 
@@ -197,7 +207,7 @@ public class UnitController : MonoBehaviour
         if(isDead) return;
         currentHP -= amount;
         canvas.gameObject.SetActive(true);
-        hpBar.fillAmount = currentHP/maxHP;
+        hpBar.fillAmount = ((float)currentHP)/maxHP;
         if (currentHP > 0)
         {
             animator.SetTrigger("Attacked");
@@ -257,7 +267,7 @@ public class UnitController : MonoBehaviour
                 nearest = enemy.transform;
             }
         }
-
+        if(nearest != null)navMeshAgent.SetDestination(nearest.transform.position);
         return nearest;
     }
 }

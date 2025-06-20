@@ -57,6 +57,7 @@ namespace Game.Buildings
         {
             if(unitsDeployed.Contains(unit)) unitsDeployed.Remove(unit);
             troopSpawned = unitsDeployed.Count;
+            backgroundProgressDeploy.gameObject.SetActive(true);
         }
 
         protected override void Instance_ChangeState()
@@ -90,7 +91,7 @@ namespace Game.Buildings
             {
                 if (currentLevel > 0)
                 {
-                    backgroundProgressDeploy.gameObject.SetActive(true);
+                    if(troopSpawned < GetCurrentStats().maxUnits) backgroundProgressDeploy.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -181,6 +182,11 @@ namespace Game.Buildings
             unit.SetupTroop(unitStats[currentLevel-1], spawnPos);
             unit.spriteRenderer.sortingOrder += troopSpawned;
             unitsDeployed.Add(unit);
+            if(troopSpawned >= GetCurrentStats().maxUnits)
+            {
+                backgroundProgressDeploy.gameObject.SetActive(false);
+                return;
+            }
             Debug.Log($"{gameObject.name} spawned troop #{troopSpawned}");
         }
         private void Update()

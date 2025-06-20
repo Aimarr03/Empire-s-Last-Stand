@@ -61,7 +61,10 @@ public class GameplayManager : MonoBehaviour
         pauseAction.action.performed += ActionPause_performed;
         actionCommand.action.performed += Action_performed;
     }
-
+    private void OnDestroy()
+    {
+        Time.timeScale = 1;
+    }
     private void Action_performed(InputAction.CallbackContext obj)
     {
         BattleStart();
@@ -191,7 +194,7 @@ public class GameplayManager : MonoBehaviour
     }
     public void LoadScene(int scene)
     {
-        SceneManager.LoadSceneAsync(scene);
+        SceneManager.LoadScene(scene);
     }
     
 }

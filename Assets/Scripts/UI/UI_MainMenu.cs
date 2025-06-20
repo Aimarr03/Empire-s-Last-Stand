@@ -17,7 +17,7 @@ public class UI_MainMenu : MonoBehaviour
     bool loading = false;
     private void Awake()
     {
-        
+        loading = false;
     }
     void Start()
     {
@@ -27,7 +27,7 @@ public class UI_MainMenu : MonoBehaviour
         sfx_volume.text = ((int)(AudioManager.instance.sfxVolume * 100)).ToString();
         AudioManager.instance.PlayMusic("menu");
     }
-    public void PlayGame()
+    public async void PlayGame()
     {
         if (loading) return;
         Debug.Log("Play Game");
@@ -35,13 +35,13 @@ public class UI_MainMenu : MonoBehaviour
         loading = true;
         Loading.alpha = 0;
         Loading.gameObject.SetActive(true);
-        Loading.DOFade(1, 1.5f).OnComplete(async () =>
-        {
-            await Task.Delay(100);
-            await SceneManager.LoadSceneAsync(1);
-            Debug.Log("Loading Complete");
-        });
+        Loading.DOFade(1, 1.5f);
+        await Task.Delay(1600);
+        SceneManager.LoadScene("Level 1");
+        Debug.Log("Loading Complete");
     }
+    public void ToggleMusic(bool value)=>  AudioManager.instance.ToggleMusic(value);
+    public void ToggleSFX(bool value) => AudioManager.instance.ToggleMusic(value);
     public void OpenOption(bool value)
     {
         if (loading) return;

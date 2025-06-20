@@ -101,8 +101,4 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(baseInterval);
         }
     }
-    void Update()
-    {
-        
-    }
 }

@@ -5254,9 +5254,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192001611903671674}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: ToggleAudio
+      - m_Target: {fileID: 1302964674}
+        m_TargetAssemblyTypeName: UI_MainMenu, Assembly-CSharp
+        m_MethodName: ToggleSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6131,8 +6131,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192001611903671674}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1302964674}
+        m_TargetAssemblyTypeName: UI_MainMenu, Assembly-CSharp
         m_MethodName: ToggleMusic
         m_Mode: 0
         m_Arguments:
@@ -6856,17 +6856,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4d53749c4769947b8c69a4c0cdc579, type: 3}
---- !u!114 &1192001611903671674 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 409356577630841537, guid: 0f4d53749c4769947b8c69a4c0cdc579, type: 3}
-  m_PrefabInstance: {fileID: 1192001611903671672}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43500a673c9a7b47ae084340e3ea700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -30,6 +30,20 @@ public class Manager_UnitSelection : MonoBehaviour
             Debug.Log("Singleton - Already have more than one Manager Unit Selection");
         }
     }
+    private void Start()
+    {
+        GameplayManager.instance.ChangeState += Instance_ChangeState;
+    }
+    private void OnDestroy()
+    {
+        GameplayManager.instance.ChangeState -= Instance_ChangeState;
+    }
+
+    private void Instance_ChangeState()
+    {
+        ui_building.gameObject.SetActive(false);
+    }
+
     public void SelectUnit(GameObject unitToAdd)
     {
         DeselectAll();
