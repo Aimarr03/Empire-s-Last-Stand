@@ -12914,7 +12914,7 @@ MonoBehaviour:
   buildingLevel: {fileID: 1249139870}
   upgradeButtonText: {fileID: 656841067}
   buildingNextLevelCost: {fileID: 859477319}
-  upgradeButton: {fileID: 385645960}
+  upgradeButton: {fileID: 97066509}
   buildingDescription: {fileID: 1460175589}
 --- !u!114 &1045617982
 MonoBehaviour:

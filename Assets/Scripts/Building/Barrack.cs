@@ -56,7 +56,7 @@ namespace Game.Buildings
         private void UnitController_OnKilled(UnitController unit)
         {
             if(unitsDeployed.Contains(unit)) unitsDeployed.Remove(unit);
-            troopSpawned--;
+            troopSpawned = unitsDeployed.Count;
         }
 
         protected override void Instance_ChangeState()
@@ -74,12 +74,12 @@ namespace Game.Buildings
                 for (int i = 0; i < unitsDeployed.Count; i++)
                 {
                     UnitController unit = unitsDeployed[i];
-                    unit.currentHP = maxHP;
+                    unit.currentHP = unit.maxHP;
 
                     unit.CommandTroop(spawnPos);
 
                     spawnPos.x += 1;
-                    if (troopSpawned % 4 == 0)
+                    if (i == 0)
                     {
                         spawnPos.x = bufferPosX;
                         spawnPos.y += 1;
@@ -139,6 +139,7 @@ namespace Game.Buildings
                 UnitController troop = unitsDeployed[i];
                 Destroy(troop.gameObject);
             }
+            Debug.Log("Setup Troops for: " + GetCurrentStats().maxUnits);
             unitsDeployed.Clear();
             Vector2 spawnPos = transform.position;
             spawnPos.x += 2.5f;
@@ -148,6 +149,7 @@ namespace Game.Buildings
             {
                 UnitController newUnit = Instantiate(troopPrefab, spawnPos, Quaternion.identity);
                 unitsDeployed.Add(newUnit);
+                newUnit.SetupTroop(unitStats[currentLevel - 1], spawnPos);
                 troopSpawned++;
 
                 spawnPos.x += 1;

@@ -36,6 +36,7 @@ public class UnitController : MonoBehaviour
     private SpawnManager spawnManager;
     private NavMeshAgent navMeshAgent;
     bool isDone = false;
+    bool CheckNewAgain = false;
     public void CommandTroop(Vector3 pos)
     {
         commanded = true;
@@ -73,6 +74,7 @@ public class UnitController : MonoBehaviour
         if (GameplayManager.instance.gameState == GameState.Night)
         {
             currentTarget = FindNearestEnemy();
+            CheckNewAgain = true;
         }
         // currentTarget = FindNearestEnemy();
         
@@ -142,6 +144,12 @@ public class UnitController : MonoBehaviour
         }
         else
         {
+            if (CheckNewAgain)
+            {
+                currentTarget = FindNearestEnemy();
+                CheckNewAgain = false;
+                return;
+            }
             RaycastHit2D hit = Physics2D.CircleCast(transform.position, 6f, Vector2.zero);
             //Debug.Log("ENEMY HIT: " + hit.collider.gameObject);
             if(hit.collider.TryGetComponent(out EnemyController enemy))

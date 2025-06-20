@@ -100,7 +100,7 @@ public class UI_Building : MonoBehaviour
         bool upgradable = currentBuilding.currentLevel < currentBuilding.maxUpgradeLevel;
         bool buyable = GameplayManager.instance.CheckMoney(currentBuilding.costToBuild);
 
-
+        Debug.Log($"Upgradable : {upgradable} | Buyable: {buyable}");
         //upgradeButton.onClick.RemoveAllListeners();
         if (currentBuilding.currentState == BuildingState.UnderConstruction)
         {
@@ -111,10 +111,14 @@ public class UI_Building : MonoBehaviour
             upgradeButtonText.text = upgradable ? "Upgrade" : "Max!";
         }
         buildingNextLevelCost.transform.parent.gameObject.SetActive(upgradable);
-        upgradeButton.interactable = buyable && upgradable;
+        upgradeButton.interactable = buyable;
         if (upgradable)
         {
             buildingNextLevelCost.text = $"{currentBuilding.costToBuild}";
+        }
+        else
+        {
+            upgradeButton.interactable = false;
         }
     }
     private void HandleTownHallInformation()
